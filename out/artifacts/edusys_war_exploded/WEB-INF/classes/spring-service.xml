@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <!--扫描service下的包-->
+    <context:component-scan base-package="com.bysj.service"/>
+
+    <!--将所有业务类注入到Spring，通过配置或者注解实现-->
+    <bean id="studentService" class="com.bysj.service.StudentServiceImpl">
+        <property name="studentMapper" ref="studentMapper"/>
+    </bean>
+    <bean id="teacherService" class="com.bysj.service.TeacherServiceImpl">
+        <property name="teacherMapper" ref="teacherMapper"/>
+    </bean>
+    <bean id="ordersService" class="com.bysj.service.OrdersServiceImpl">
+        <property name="ordersMapper" ref="ordersMapper"/>
+    </bean>
+
+    <!--事务-->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <!--aop事务支持 -->
+
+</beans>

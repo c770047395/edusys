@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="http://www.radiustheme.com/xmlrpc.php">
+<link rel="shortcut icon" href="http://www.radiustheme.com/wp-content/themes/radius/images/favicon.png" />
+<title>Page not found - RadiusTheme</title>
+		<script type="text/javascript">
+		var ajaxurl = 'https://www.radiustheme.com/wp-admin/admin-ajax.php';
+		</script>
+		
+<!-- This site is optimized with the Yoast SEO plugin v3.8 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="robots" content="noindex,follow"/>
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="object" />
+<meta property="og:title" content="Page not found - RadiusTheme" />
+<meta property="og:site_name" content="RadiusTheme" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Page not found - RadiusTheme" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='//maps.googleapis.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="RadiusTheme &raquo; Feed" href="https://www.radiustheme.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="RadiusTheme &raquo; Comments Feed" href="https://www.radiustheme.com/comments/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/www.radiustheme.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.6.1"}};
+			!function(a,b,c){function d(a){var c,d,e,f,g,h=b.createElement("canvas"),i=h.getContext&&h.getContext("2d"),j=String.fromCharCode;if(!i||!i.fillText)return!1;switch(i.textBaseline="top",i.font="600 32px Arial",a){case"flag":return i.fillText(j(55356,56806,55356,56826),0,0),!(h.toDataURL().length<3e3)&&(i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,65039,8205,55356,57096),0,0),c=h.toDataURL(),i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,55356,57096),0,0),d=h.toDataURL(),c!==d);case"diversity":return i.fillText(j(55356,57221),0,0),e=i.getImageData(16,16,1,1).data,f=e[0]+","+e[1]+","+e[2]+","+e[3],i.fillText(j(55356,57221,55356,57343),0,0),e=i.getImageData(16,16,1,1).data,g=e[0]+","+e[1]+","+e[2]+","+e[3],f!==g;case"simple":return i.fillText(j(55357,56835),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode8":return i.fillText(j(55356,57135),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode9":return i.fillText(j(55358,56631),0,0),0!==i.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='layerslider-css'  href='http://www.radiustheme.com/wp-content/plugins/LayerSlider/static/css/layerslider.css?ver=5.6.2' type='text/css' media='all' />
+<link rel='stylesheet' id='ls-google-fonts-css'  href='http://fonts.googleapis.com/css?family=Lato:100,300,regular,700,900%7COpen+Sans:300%7CIndie+Flower:regular%7COswald:300,regular,700&#038;subset=latin%2Clatin-ext' type='text/css' media='all' />
+<link rel='stylesheet' id='bbp-default-css'  href='http://www.radiustheme.com/wp-content/plugins/bbpress/templates/default/css/bbpress.css?ver=2.5.11-6121' type='text/css' media='screen' />
+<link rel='stylesheet' id='contact-form-7-css'  href='http://www.radiustheme.com/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=4.5.1' type='text/css' media='all' />
+<link rel='stylesheet' id='edd-styles-css'  href='http://www.radiustheme.com/wp-content/plugins/easy-digital-downloads/templates/edd.min.css?ver=2.6.11' type='text/css' media='all' />
+<link rel='stylesheet' id='scrollup-css-css'  href='http://www.radiustheme.com/wp-content/plugins/smooth-scroll-up/css/scrollup.css?ver=4.6.1' type='text/css' media='all' />
+<style id='scrollup-css-inline-css' type='text/css'>
+a.scrollup-image {background-image: url("https://radiustheme.com/wp-content/plugins/smooth-scroll-up/img/scrollup.png") !important; }
+</style>
+<link rel='stylesheet' id='radius-bootstrap-css'  href='http://www.radiustheme.com/wp-content/themes/radius/css/radius-bootstrap/css/bootstrap.min.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='radius-font-awesome-css'  href='http://www.radiustheme.com/wp-content/themes/radius/css/radius-font-awesome/css/font-awesome.min.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='radius-owl-carousel-css'  href='http://www.radiustheme.com/wp-content/themes/radius/css/owl.carousel.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='radius-animate-css-css'  href='http://www.radiustheme.com/wp-content/themes/radius/css/animate.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='radius-owl-carousel-theme-css'  href='http://www.radiustheme.com/wp-content/themes/radius/css/owl.theme.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='radius-owl-carousel-transitions-css'  href='http://www.radiustheme.com/wp-content/themes/radius/css/owl.transitions.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='radius-style-css'  href='http://www.radiustheme.com/wp-content/themes/radius/style.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='js_composer_front-css'  href='http://www.radiustheme.com/wp-content/plugins/js_composer/assets/css/js_composer.min.css?ver=4.11.2.1' type='text/css' media='all' />
+<link rel='stylesheet' id='ubermenu-css'  href='http://www.radiustheme.com/wp-content/plugins/ubermenu/pro/assets/css/ubermenu.min.css?ver=3.2.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='ubermenu-font-awesome-css'  href='http://www.radiustheme.com/wp-content/plugins/ubermenu/assets/css/fontawesome/css/font-awesome.min.css?ver=4.3' type='text/css' media='all' />
+<link rel='stylesheet' id='fancybox-css'  href='http://www.radiustheme.com/wp-content/plugins/easy-fancybox/fancybox/jquery.fancybox-1.3.7.min.css?ver=1.5.7' type='text/css' media='screen' />
+<script type='text/javascript' src='http://www.radiustheme.com/wp-content/plugins/LayerSlider/static/js/greensock.js?ver=1.11.8'></script>
+<script type='text/javascript' src='http://www.radiustheme.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='http://www.radiustheme.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript' src='http://www.radiustheme.com/wp-content/plugins/LayerSlider/static/js/layerslider.kreaturamedia.jquery.js?ver=5.6.2'></script>
+<script type='text/javascript' src='http://www.radiustheme.com/wp-content/plugins/LayerSlider/static/js/layerslider.transitions.js?ver=5.6.2'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var edd_scripts = {"ajaxurl":"https:\/\/www.radiustheme.com\/wp-admin\/admin-ajax.php","position_in_cart":"","has_purchase_links":"","already_in_cart_message":"You have already added this item to your cart","empty_cart_message":"Your cart is empty","loading":"Loading","select_option":"Please select an option","ajax_loader":"\/wp-content\/plugins\/easy-digital-downloads\/assets\/images\/loading.gif","is_checkout":"0","default_gateway":"2checkout","redirect_to_checkout":"1","checkout_page":"https:\/\/www.radiustheme.com\/checkout\/","permalinks":"1","quantities_enabled":"","taxes_enabled":"0"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.radiustheme.com/wp-content/plugins/easy-digital-downloads/assets/js/edd-ajax.min.js?ver=2.6.11'></script>
+<link rel='https://api.w.org/' href='https://www.radiustheme.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.radiustheme.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.radiustheme.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.6.1" />
+<meta name="generator" content="Easy Digital Downloads v2.6.11" />
+<style id="ubermenu-custom-generated-css">
+/** UberMenu Custom Menu Styles (Customizer) **/
+/* main */
+.ubermenu-main.ubermenu-transition-fade .ubermenu-item .ubermenu-submenu-drop { margin-top:0; }
+.ubermenu-main .ubermenu-item-level-0 > .ubermenu-target { font-size:16px; text-transform:none; color:#464444; }
+.ubermenu-main .ubermenu-nav .ubermenu-item.ubermenu-item-level-0 > .ubermenu-target { font-weight:normal; }
+.ubermenu-main .ubermenu-item.ubermenu-item-level-0 > .ubermenu-highlight { color:#8cc63e; }
+.ubermenu-main .ubermenu-submenu.ubermenu-submenu-drop { background-color:#0071bd; color:#ffffff; }
+.ubermenu-main .ubermenu-item-level-0 > .ubermenu-submenu-drop { box-shadow:0 0 20px rgba(0,0,0, 1); }
+.ubermenu-main .ubermenu-item-normal > .ubermenu-target { color:#ffffff; font-size:16px; }
+
+
+/** UberMenu Custom Menu Item Styles (Menu Item Settings) **/
+/* 188 */   .ubermenu .ubermenu-submenu.ubermenu-submenu-id-188 { width:200px; min-width:200px; }
+/* 37 */    .ubermenu .ubermenu-submenu.ubermenu-submenu-id-37 { width:200px; min-width:200px; }
+/* 433 */   .ubermenu .ubermenu-submenu.ubermenu-submenu-id-433 { width:160px; min-width:160px; }
+/* 194 */   .ubermenu .ubermenu-submenu.ubermenu-submenu-id-194 { width:220px; min-width:220px; }
+
+/* Status: Loaded from Transient */
+
+@media \0screen { .ubermenu .ubermenu-image { width: auto } } /* Prevent height distortion in IE8. */
+
+</style><meta name="generator" content="Powered by Visual Composer - drag and drop page builder for WordPress."/>
+<!--[if lte IE 9]><link rel="stylesheet" type="text/css" href="http://www.radiustheme.com/wp-content/plugins/js_composer/assets/css/vc_lte_ie9.min.css" media="screen"><![endif]--><!--[if IE  8]><link rel="stylesheet" type="text/css" href="http://www.radiustheme.com/wp-content/plugins/js_composer/assets/css/vc-ie8.min.css" media="screen"><![endif]-->
+<!-- Easy FancyBox 1.5.7 using FancyBox 1.3.7 - RavanH (http://status301.net/wordpress-plugins/easy-fancybox/) -->
+<script type="text/javascript">
+/* <![CDATA[ */
+var fb_timeout = null;
+var fb_opts = { 'overlayShow' : true, 'hideOnOverlayClick' : true, 'showCloseButton' : true, 'centerOnScroll' : true, 'enableEscapeButton' : true, 'autoScale' : true };
+var easy_fancybox_handler = function(){
+	/* IMG */
+	var fb_IMG_select = 'a[href*=".jpg"]:not(.nofancybox,.pin-it-button), area[href*=".jpg"]:not(.nofancybox), a[href*=".jpeg"]:not(.nofancybox,.pin-it-button), area[href*=".jpeg"]:not(.nofancybox), a[href*=".png"]:not(.nofancybox,.pin-it-button), area[href*=".png"]:not(.nofancybox)';
+	jQuery(fb_IMG_select).addClass('fancybox image');
+	var fb_IMG_sections = jQuery('div.gallery');
+	fb_IMG_sections.each(function() { jQuery(this).find(fb_IMG_select).attr('rel', 'gallery-' + fb_IMG_sections.index(this)); });
+	jQuery('a.fancybox, area.fancybox, li.fancybox a:not(li.nofancybox a)').fancybox( jQuery.extend({}, fb_opts, { 'transitionIn' : 'elastic', 'easingIn' : 'easeOutBack', 'transitionOut' : 'elastic', 'easingOut' : 'easeInBack', 'opacity' : false, 'hideOnContentClick' : false, 'titleShow' : true, 'titlePosition' : 'over', 'titleFromAlt' : true, 'showNavArrows' : true, 'enableKeyboardNav' : true, 'cyclic' : false }) );
+	/* YouTube */
+	jQuery('a[href*="youtube.com/watch"]:not(.nofancybox), area[href*="youtube.com/watch"]:not(.nofancybox)').addClass('fancybox-youtube');
+	jQuery('a[href*="youtu.be/"]:not(.nofancybox), area[href*="youtu.be/"]:not(.nofancybox)').addClass('fancybox-youtube');
+	jQuery('a.fancybox-youtube, area.fancybox-youtube, li.fancybox-youtube a:not(li.nofancybox a)').fancybox( jQuery.extend({}, fb_opts, { 'type' : 'iframe', 'width' : 640, 'height' : 360, 'padding' : 0, 'titleShow' : false, 'titlePosition' : 'float', 'titleFromAlt' : true, 'onStart' : function(selectedArray, selectedIndex, selectedOpts) { selectedOpts.href = selectedArray[selectedIndex].href.replace(new RegExp('youtu.be', 'i'), 'www.youtube.com/embed').replace(new RegExp('watch\\?(.*)v=([a-z0-9\_\-]+)(&amp;|&|\\?)?(.*)', 'i'), 'embed/$2?$1$4'); var splitOn = selectedOpts.href.indexOf('?'); var urlParms = ( splitOn > -1 ) ? selectedOpts.href.substring(splitOn) : ""; selectedOpts.allowfullscreen = ( urlParms.indexOf('fs=0') > -1 ) ? false : true } }) );
+	/* Vimeo */
+	jQuery('a[href*="vimeo.com/"]:not(.nofancybox), area[href*="vimeo.com/"]:not(.nofancybox)').addClass('fancybox-vimeo');
+	jQuery('a.fancybox-vimeo, area.fancybox-vimeo, li.fancybox-vimeo a:not(li.nofancybox a)').fancybox( jQuery.extend({}, fb_opts, { 'type' : 'iframe', 'width' : 500, 'height' : 281, 'padding' : 0, 'titleShow' : false, 'titlePosition' : 'float', 'titleFromAlt' : true, 'onStart' : function(selectedArray, selectedIndex, selectedOpts) { selectedOpts.href = selectedArray[selectedIndex].href.replace(new RegExp('//(www\.)?vimeo\.com/([0-9]+)(&|\\?)?(.*)', 'i'), '//player.vimeo.com/video/$2?$4'); var splitOn = selectedOpts.href.indexOf('?'); var urlParms = ( splitOn > -1 ) ? selectedOpts.href.substring(splitOn) : ""; selectedOpts.allowfullscreen = ( urlParms.indexOf('fullscreen=0') > -1 ) ? false : true } }) );
+	/* Auto-click */ 
+	jQuery('#fancybox-auto').trigger('click');
+}
+/* ]]> */
+</script>
+<noscript><style type="text/css"> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript></head>
+
+<body class="error404 hfeed wpb-js-composer js-comp-ver-4.11.2.1 vc_responsive">
+<div id="page" class="site">
+    <!-- header area start here -->
+	<header>
+		<div class="header-area">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-7">
+						<div class="logo-area"> 
+							<a href="https://www.radiustheme.com"><img src="http://www.radiustheme.com/wp-content/themes/radius/images/logo.png" alt=""></a>
+						</div>					
+					</div>
+					<div class="col-lg-8 col-md-8 col-sm-8 col-xs-5 navbar-right">
+						<div class="main-menu-area"> 
+							<nav> 
+								
+<!-- UberMenu [Configuration:main] [Theme Loc:primary] [Integration:api] -->
+<a class="ubermenu-responsive-toggle ubermenu-responsive-toggle-main ubermenu-skin-none ubermenu-loc-primary ubermenu-responsive-toggle-content-align-left ubermenu-responsive-toggle-align-full " data-ubermenu-target="ubermenu-main-2-primary"><i class="fa fa-bars"></i>Menu</a><nav id="ubermenu-main-2-primary" class="ubermenu ubermenu-nojs ubermenu-main ubermenu-menu-2 ubermenu-loc-primary ubermenu-responsive ubermenu-responsive-default ubermenu-responsive-collapse ubermenu-horizontal ubermenu-transition-shift ubermenu-trigger-hover_intent ubermenu-skin-none  ubermenu-bar-align-full ubermenu-items-align-center ubermenu-bound ubermenu-disable-submenu-scroll ubermenu-sub-indicators ubermenu-retractors-responsive"><ul id="ubermenu-nav-main-2-primary" class="ubermenu-nav"><li id="menu-item-40" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-40 ubermenu-item-level-0 ubermenu-column ubermenu-column-auto" ><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" title="Home" href="https://www.radiustheme.com/" tabindex="0"><span class="ubermenu-target-title ubermenu-target-text">Home</span></a></li><li id="menu-item-188" class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-has-children ubermenu-item-188 ubermenu-item-level-0 ubermenu-column ubermenu-column-auto ubermenu-has-submenu-drop ubermenu-has-submenu-flyout" ><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="#" tabindex="0"><span class="ubermenu-target-title ubermenu-target-text">Joomla</span></a><ul class="ubermenu-submenu ubermenu-submenu-id-188 ubermenu-submenu-type-flyout ubermenu-submenu-drop ubermenu-submenu-align-left_edge_item" ><li id="menu-item-187" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-187 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-1" ><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://www.radiustheme.com/joomla/joomla-extensions/"><span class="ubermenu-target-title ubermenu-target-text">Joomla Extensions</span></a></li><li id="menu-item-4386" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-4386 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-1" ><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://www.radiustheme.com/joomla/joomla-templates/"><span class="ubermenu-target-title ubermenu-target-text">Joomla Templates</span></a></li><li class="ubermenu-retractor ubermenu-retractor-mobile"><i class="fa fa-times"></i> Close</li></ul></li><li id="menu-item-194" class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-has-children ubermenu-item-194 ubermenu-item-level-0 ubermenu-column ubermenu-column-auto ubermenu-has-submenu-drop ubermenu-has-submenu-flyout" ><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="#" tabindex="0"><span class="ubermenu-target-title ubermenu-target-text">WordPress</span></a><ul class="ubermenu-submenu ubermenu-submenu-id-194 ubermenu-submenu-type-flyout ubermenu-submenu-drop ubermenu-submenu-align-left_edge_item" ><li id="menu-item-196" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-196 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-1" ><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://www.radiustheme.com/wordpress/wordpress-plugins/"><span class="ubermenu-target-title ubermenu-target-text">WordPress Plugins</span></a></li><li id="menu-item-3621" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-3621 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-1" ><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://www.radiustheme.com/wordpress-design-development-packages/"><span class="ubermenu-target-title ubermenu-target-text">WordPress Custom Work</span></a></li><li class="ubermenu-retractor ubermenu-retractor-mobile"><i class="fa fa-times"></i> Close</li></ul></li><li id="menu-item-383" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-383 ubermenu-item-level-0 ubermenu-column ubermenu-column-auto" ><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://www.radiustheme.com/blog/" tabindex="0"><span class="ubermenu-target-title ubermenu-target-text">Blog</span></a></li><li id="menu-item-37" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-has-children ubermenu-item-37 ubermenu-item-level-0 ubermenu-column ubermenu-column-auto ubermenu-has-submenu-drop ubermenu-has-submenu-flyout" ><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://www.radiustheme.com/support/" tabindex="0"><span class="ubermenu-target-title ubermenu-target-text">Support</span></a><ul class="ubermenu-submenu ubermenu-submenu-id-37 ubermenu-submenu-type-flyout ubermenu-submenu-drop ubermenu-submenu-align-left_edge_item" ><li id="menu-item-535" class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-535 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-1" ><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://www.radiustheme.com/forums/"><span class="ubermenu-target-title ubermenu-target-text">Forum Support</span></a></li><li id="menu-item-604" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-604 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-1" ><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://www.radiustheme.com/ticket-support/"><span class="ubermenu-target-title ubermenu-target-text">Ticket Support</span></a></li><li id="menu-item-1037" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-1037 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-1" ><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://www.radiustheme.com/faqs/"><span class="ubermenu-target-title ubermenu-target-text">Faq&#8217;s</span></a></li><li class="ubermenu-retractor ubermenu-retractor-mobile"><i class="fa fa-times"></i> Close</li></ul></li><li id="menu-item-234" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-234 ubermenu-item-level-0 ubermenu-column ubermenu-column-auto" ><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://www.radiustheme.com/documentation/" tabindex="0"><span class="ubermenu-target-title ubermenu-target-text">Documentation</span></a></li><li id="menu-item-36" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-36 ubermenu-item-level-0 ubermenu-column ubermenu-column-auto" ><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://www.radiustheme.com/contact/" tabindex="0"><span class="ubermenu-target-title ubermenu-target-text">Contact</span></a></li><li id="menu-item-433" class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-has-children ubermenu-item-433 ubermenu-item-level-0 ubermenu-column ubermenu-column-auto ubermenu-has-submenu-drop ubermenu-has-submenu-mega ubermenu-submenu-rtl" ><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://www.radiustheme.com/wp-login.php" tabindex="0"><span class="ubermenu-target-title ubermenu-target-text">Login</span></a><ul class="ubermenu-submenu ubermenu-submenu-id-433 ubermenu-submenu-type-auto ubermenu-submenu-type-mega ubermenu-submenu-drop ubermenu-submenu-align-right_edge_item" ><li id="menu-item-437" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-437 ubermenu-item-auto ubermenu-item-header ubermenu-item-level-1 ubermenu-column ubermenu-column-auto" ><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://www.radiustheme.com/checkout/purchase-history/"><span class="ubermenu-target-title ubermenu-target-text">Purchase History</span></a></li><li class="ubermenu-retractor ubermenu-retractor-mobile"><i class="fa fa-times"></i> Close</li></ul></li></ul></nav>
+<!-- End UberMenu -->
+							</nav>
+						</div>					
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+<div class="container-fluid">
+	<div class="row">
+		<div class="breadcumb-background-area">
+<div class="container">
+	<div class="row">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
+			<div class="breadcumb-background">
+				<h2 class="page-title">How to setup and configure Food Menu PRO for WordPress</h2>
+				<div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
+					<!-- Breadcrumb NavXT 5.5.2 -->
+<span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Go to RadiusTheme." href="https://www.radiustheme.com" class="home"><span property="name">Home</span></a><meta property="position" content="1"></span> &gt; <span property="itemListElement" typeof="ListItem"><span property="name">404</span><meta property="position" content="2"></span>				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>	</div>
+</div>
+<div class="inner-page">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+
+				<div id="primary" class="content-area">
+					<main id="main" class="site-main" role="main">
+
+						<section class="error-404 not-found">
+							<header class="page-header">
+								<h1 class="page-title">Oops! That page can&rsquo;t be found.</h1>
+							</header><!-- .page-header -->
+
+							<div class="page-content">
+								<p>It looks like nothing was found at this location. Maybe try one of the links below or a search?</p>
+
+								<form role="search" method="get" class="search-form" action="https://www.radiustheme.com/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+				</label>
+				<input type="submit" class="search-submit" value="Search" />
+			</form>
+							</div><!-- .page-content -->
+						</section><!-- .error-404 -->
+
+					</main><!-- #main -->
+				</div><!-- #primary -->
+
+
+			</div>
+		</div>
+	</div>
+</div>
+</div><!-- #content -->
+<footer>
+	<div class="footer-top-area">
+		<div class="container">
+			<div class="row">
+				<div class="footer-area"> 
+					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+						<aside id="nav_menu-3" class="widget widget_nav_menu"><h2 class="widget-title">Our Products</h2><div class="menu-our-products-container"><ul id="menu-our-products" class="menu"><li id="menu-item-1904" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1904"><a href="https://www.radiustheme.com/joomla/joomla-extensions/">Joomla Extensions</a></li>
+<li id="menu-item-1905" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1905"><a href="https://www.radiustheme.com/wordpress/wordpress-plugins/">WordPress Plugins</a></li>
+</ul></div></aside><aside id="text-11" class="widget widget_text">			<div class="textwidget"><a href="http://themeforest.net/user/radiustheme/portfolio?ref=RadiusTheme" target="_blank"><img src="https://radiustheme.com/wp-content/uploads/2016/04/theme_forest_profile.png" alt="radiustheme"></a>
+<div class="social-icons">
+<a href="https://www.facebook.com/RadiusTheme/" target="_blank"><i class="fa fa-facebook-square"></i></a>
+<a href="https://profiles.wordpress.org/techlabpro1/" target="_blank"><i class="fa fa-wordpress"></i></a>
+<a href="http://extensions.joomla.org/profile/profile/details/232680" target="_blank"><i class="fa fa-joomla"></i></a>
+
+</div></div>
+		</aside>					</div>
+					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+						<div class="single-footer"> 
+							<aside id="nav_menu-4" class="widget widget_nav_menu"><h2 class="widget-title">Company Policy</h2><div class="menu-company-container"><ul id="menu-company" class="menu"><li id="menu-item-471" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-471"><a href="https://www.radiustheme.com/terms-conditions/">Terms &#038; Conditions</a></li>
+<li id="menu-item-470" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-470"><a href="https://www.radiustheme.com/return-policy/">Return Policy</a></li>
+<li id="menu-item-469" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-469"><a href="https://www.radiustheme.com/support-policies/">Support Policies</a></li>
+<li id="menu-item-565" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-565"><a href="https://www.radiustheme.com/license-policy/">License Policy</a></li>
+</ul></div></aside>						</div>
+					</div>
+					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">	
+					<div class="single-footer"> 
+						<h2>Quick Links</h2>						
+							<aside id="nav_menu-2" class="widget widget_nav_menu"><div class="single-footer"> <h2 class="widget-title" style="displaY:none;">Quick Links</h2><div class="menu-quick-links-container"><ul id="menu-quick-links" class="menu"><li id="menu-item-472" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-472"><a href="https://www.radiustheme.com/documentation/">Documentation</a></li>
+<li id="menu-item-109" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-109"><a href="https://www.radiustheme.com/checkout/purchase-history/">Purchase History</a></li>
+<li id="menu-item-473" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-473"><a href="https://www.radiustheme.com/forums/">Support</a></li>
+<li id="menu-item-112" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-112"><a href="https://www.radiustheme.com/contact/">Contact</a></li>
+</ul></div></div></aside>		
+					</div>																			
+										
+					</div>
+					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+						<div class="single-footer"> 
+						<h2>News Letter Signup</h2>
+						<aside id="mc4wp_form_widget-3" class="widget widget_mc4wp_form_widget"><div class="single-footer"> <h2 class="widget-title" style="displaY:none;">Newsletter</h2><script type="text/javascript">(function() {
+	if (!window.mc4wp) {
+		window.mc4wp = {
+			listeners: [],
+			forms    : {
+				on: function (event, callback) {
+					window.mc4wp.listeners.push({
+						event   : event,
+						callback: callback
+					});
+				}
+			}
+		}
+	}
+})();
+</script><!-- MailChimp for WordPress v3.1.12 - https://wordpress.org/plugins/mailchimp-for-wp/ --><form id="mc4wp-form-1" class="mc4wp-form mc4wp-form-762" method="post" data-id="762" data-name="News Letter" ><div class="mc4wp-form-fields"><p>
+	<label>Please Signup for latest update and release. </label>
+	<input type="email" name="EMAIL" placeholder="Your email address" class="form-control" required />
+</p>
+
+<p>
+	<input type="submit" class="btn btn-warning" value="Sign up" />
+</p><div style="display: none;"><input type="text" name="_mc4wp_honeypot" value="" tabindex="-1" autocomplete="off" /></div><input type="hidden" name="_mc4wp_timestamp" value="1479893743" /><input type="hidden" name="_mc4wp_form_id" value="762" /><input type="hidden" name="_mc4wp_form_element_id" value="mc4wp-form-1" /></div><div class="mc4wp-response"></div></form><!-- / MailChimp for WordPress Plugin --></div></aside><aside id="text-10" class="widget widget_text"><div class="single-footer"> <h2 class="widget-title" style="displaY:none;">Secure Payment</h2>			<div class="textwidget"><h3>Secure Payment</h3>
+<img src="https://radiustheme.com/wp-content/uploads/2016/03/2copayment.png" alt="payment">
+</div>
+		</div></aside>		
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer-bottom-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+					<div class="footer-bottom-left">
+					
+						<p>&copy; 2015 -2016 RadiusTheme. All rights reserved.</p>
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+					<div class="footer-bottom-right">					
+						<p>Design & Developed by Radiustheme.com</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+</div><!-- #page -->
+<script> var $nocnflct = jQuery.noConflict();
+			$nocnflct(function () {
+			    $nocnflct.scrollUp({
+				scrollName: 'scrollUp', // Element ID
+				scrollClass: 'scrollUp scrollup-image scrollup-left', // Element Class
+				scrollDistance: 250, // Distance from top/bottom before showing element (px)
+				scrollFrom: 'top', // top or bottom
+				scrollSpeed: 300, // Speed back to top (ms )
+				easingType: 'linear', // Scroll to top easing (see http://easings.net/)
+				animation: 'slide', // Fade, slide, none
+				animationInSpeed: 200, // Animation in speed (ms )
+				animationOutSpeed: 200, // Animation out speed (ms )
+				scrollText: '', // Text for element, can contain HTML
+				scrollTitle: false, // Set a custom link title if required. Defaults to scrollText
+				scrollImg: false, // Set true to use image
+				activeOverlay: false, // Set CSS color to display scrollUp active point
+				zIndex: 2147483647 // Z-Index for the overlay
+			    });
+			});</script><script type="text/javascript">(function() {function addEventListener(element,event,handler) {
+	if(element.addEventListener) {
+		element.addEventListener(event,handler, false);
+	} else if(element.attachEvent){
+		element.attachEvent('on'+event,handler);
+	}
+}function maybePrefixUrlField() {
+	if(this.value.trim() !== '' && this.value.indexOf('http') !== 0) {
+		this.value = "http://" + this.value;
+	}
+}
+
+var urlFields = document.querySelectorAll('.mc4wp-form input[type="url"]');
+if( urlFields && urlFields.length > 0 ) {
+	for( var j=0; j < urlFields.length; j++ ) {
+		addEventListener(urlFields[j],'blur',maybePrefixUrlField);
+	}
+}/* test if browser supports date fields */
+var testInput = document.createElement('input');
+testInput.setAttribute('type', 'date');
+if( testInput.type !== 'date') {
+
+	/* add placeholder & pattern to all date fields */
+	var dateFields = document.querySelectorAll('.mc4wp-form input[type="date"]');
+	for(var i=0; i<dateFields.length; i++) {
+		if(!dateFields[i].placeholder) {
+			dateFields[i].placeholder = 'YYYY-MM-DD';
+		}
+		if(!dateFields[i].pattern) {
+			dateFields[i].pattern = '[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])';
+		}
+	}
+}
+
+})();</script><script type='text/javascript' src='http://www.radiustheme.com/wp-content/plugins/bbpress/templates/default/js/editor.js?ver=2.5.11-6121'></script>
+<script type='text/javascript' src='http://www.radiustheme.com/wp-content/plugins/contact-form-7/includes/js/jquery.form.min.js?ver=3.51.0-2014.06.20'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var _wpcf7 = {"loaderUrl":"http:\/\/www.radiustheme.com\/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif","recaptcha":{"messages":{"empty":"Please verify that you are not a robot."}},"sending":"Sending ..."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.radiustheme.com/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=4.5.1'></script>
+<script type='text/javascript' src='http://www.radiustheme.com/wp-content/plugins/smooth-scroll-up/js/jquery.scrollUp.min.js?ver=4.6.1'></script>
+<script type='text/javascript' src='http://www.radiustheme.com/wp-content/themes/radius/css/radius-bootstrap/js/bootstrap.min.js?ver=4.6.1'></script>
+<script type='text/javascript' src='http://www.radiustheme.com/wp-content/themes/radius/js/owl.carousel.js?ver=4.6.1'></script>
+<script type='text/javascript' src='http://www.radiustheme.com/wp-content/themes/radius/js/wow.min.js?ver=4.6.1'></script>
+<script type='text/javascript' src='http://www.radiustheme.com/wp-content/themes/radius/js/custom.js?ver=4.6.1'></script>
+<script type='text/javascript' src='//maps.googleapis.com/maps/api/js?sensor=false&#038;ver=4.6.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var ubermenu_data = {"remove_conflicts":"on","reposition_on_load":"off","intent_delay":"300","intent_interval":"100","intent_threshold":"7","scrollto_offset":"50","scrollto_duration":"1000","responsive_breakpoint":"959","accessible":"on","retractor_display_strategy":"responsive","touch_off_close":"on","v":"3.2.1.1","configurations":["main"],"ajax_url":"https:\/\/www.radiustheme.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.radiustheme.com/wp-content/plugins/ubermenu/assets/js/ubermenu.min.js?ver=3.2.1.1'></script>
+<script type='text/javascript' src='http://www.radiustheme.com/wp-includes/js/wp-embed.min.js?ver=4.6.1'></script>
+<script type='text/javascript' src='http://www.radiustheme.com/wp-content/plugins/easy-fancybox/fancybox/jquery.fancybox-1.3.7.min.js?ver=1.5.7'></script>
+<script type='text/javascript' src='http://www.radiustheme.com/wp-content/plugins/easy-fancybox/jquery.easing.pack.js?ver=1.3'></script>
+<script type='text/javascript' src='http://www.radiustheme.com/wp-content/plugins/easy-fancybox/jquery.mousewheel.min.js?ver=3.1.12'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var mc4wp_forms_config = [];
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.radiustheme.com/wp-content/plugins/mailchimp-for-wp/assets/js/forms-api.min.js?ver=3.1.12'></script>
+<!--[if lte IE 9]>
+<script type='text/javascript' src='http://www.radiustheme.com/wp-content/plugins/mailchimp-for-wp/assets/js/third-party/placeholders.min.js?ver=3.1.12'></script>
+<![endif]-->
+
+<script type="text/javascript">
+jQuery(document).on('ready post-load', easy_fancybox_handler );
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-87754624-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type="text/javascript" async="async" defer="defer" data-cfasync="false" src="https://mylivechat.com/chatinline.aspx?hccid=17874410"></script>
+
+</body>
+</html>

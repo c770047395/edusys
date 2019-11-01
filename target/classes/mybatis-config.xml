@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <settings>
+        <setting name="logImpl" value="LOG4J"/>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <setting name="jdbcTypeForNull" value="NULL" />
+    </settings>
+
+    <!--配置数据源，交给Spring做-->
+    <typeAliases>
+        <package name="com.bysj.pojo"/>
+    </typeAliases>
+
+
+
+    <mappers>
+        <package name="com.bysj.dao"/>
+    </mappers>
+</configuration>

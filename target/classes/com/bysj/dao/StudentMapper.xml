@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bysj.dao.StudentMapper">
+
+    <select id="queryAllStudent" resultType="Student">
+        select * from student
+    </select>
+    <select id="queryStudentById" resultType="Student">
+        select * from student where id = #{id}
+    </select>
+    <select id="queryStudentByUsername" resultType="Student">
+        select * from student where username = #{username}
+    </select>
+    <insert id="addStudent" parameterType="Student">
+        insert into student(username,password,name,sex,id_number,area,address,phone,sq,an)
+        values(#{username},#{password},#{name},#{sex},#{idNumber},#{area},#{address},#{phone},#{sq},#{an})
+    </insert>
+    <update id="updateStudent" parameterType="Student">
+        update student set password = #{password},name=#{name},sex=#{sex},id_number=#{idNumber},area=#{area},address=#{address},phone=#{phone},sq=#{sq},an=#{an},status=#{status} where id = #{id}
+    </update>
+    <delete id="deleteStudent" >
+        delete from student where id = #{id}
+    </delete>
+
+</mapper>
