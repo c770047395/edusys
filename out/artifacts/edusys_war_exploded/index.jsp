@@ -11,6 +11,6 @@
     <title>家教</title>
   </head>
   <body>
-    <a href="/user/login">前往登录</a>
+    <a href="/user/toLogin">前往登录</a>
   </body>
 </html>

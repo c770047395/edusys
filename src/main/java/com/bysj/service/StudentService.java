@@ -8,10 +8,11 @@ import java.util.List;
 public interface StudentService {
     List<Student> queryAllStudent();
     Student queryStudentById(int id);
+    Student queryStudentByUsername(String username);
     int addStudent(Student student);
     int updateStudent(Student student);
     int deleteStudent(int id);
-    Student Login(String username,String password);
+    Student login(String username,String password);
     boolean changeStatus(int id,int status);
 
 }

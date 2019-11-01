@@ -32,8 +32,15 @@ public class StudentServiceImpl implements StudentService {
         return studentMapper.deleteStudent(id);
     }
 
-    public Student Login(String username, String password) {
+    public Student queryStudentByUsername(String username) {
+        return studentMapper.queryStudentByUsername(username);
+    }
+
+    public Student login(String username, String password) {
         Student student = studentMapper.queryStudentByUsername(username);
+        if (student == null){
+            return null;
+        }
         if (!student.getPassword().equals(password)) {
             return null;
         }
