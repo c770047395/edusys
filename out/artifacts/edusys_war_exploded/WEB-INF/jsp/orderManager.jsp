@@ -90,8 +90,8 @@
     <div id="sidebar" class="sidebar py-3">
         <div class="text-gray-400 text-uppercase px-3 px-lg-4 py-4 font-weight-bold small headings-font-family">主菜单</div>
         <ul class="sidebar-menu list-unstyled">
-            <li class="sidebar-list-item"><a href="/user/toMain" class="sidebar-link text-muted active"><i class="o-home-1 mr-3 text-gray"></i><span>首页</span></a></li>
-            <li class="sidebar-list-item"><a href="/user/toOrderManager" class="sidebar-link text-muted" ><i class="o-survey-1 mr-3 text-gray"></i><span>家教中心</span></a></li>
+            <li class="sidebar-list-item"><a href="/user/toMain" class="sidebar-link text-muted"><i class="o-home-1 mr-3 text-gray"></i><span>首页</span></a></li>
+            <li class="sidebar-list-item"><a href="/user/toOrderManager" class="sidebar-link text-muted active" ><i class="o-survey-1 mr-3 text-gray"></i><span>家教中心</span></a></li>
             <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-user-1 mr-3 text-gray"></i><span>用户</span></a>
                 <div id="pages" class="collapse">
                     <ul class="sidebar-menu list-unstyled border-left border-primary border-thick">
@@ -106,20 +106,49 @@
     </div>
     <div class="page-holder w-100 d-flex flex-wrap">
         <div class="container-fluid px-xl-5">
-            <c:if test="${not empty msg}"><div class="alert alert-success">${msg}</div></c:if>
-            <c:if test="${user.status == 0}">
             <section class="py-5">
-                <div class="row">
-                    <div class="col-lg-12"><a href="/user/deposit" class="message card px-5 py-3 mb-4 bg-hover-gradient-primary no-anchor-style">
-                        <div class="row">
-                            <div class="col-lg-12 d-flex align-items-center flex-column flex-lg-row text-center text-md-left">
-                                <div class="bg-gray-100 roundy px-4 py-1 mr-0 mr-lg-3 mt-2 mt-lg-0 text-dark exclode">温馨提示</div>
-                                <p class="mb-0 mt-3 mt-lg-0">您还未缴纳押金，为保证本系统功能正常使用，请缴纳押金.</p>
+                <div class="row text-dark">
+                    <div class="col-lg-4 mb-4 mb-lg-0">
+                        <a href="#" class="card rounded credit-card bg-hover-gradient-violet">
+                            <div class="content d-flex flex-column justify-content-between p-4">
+                                <h1 class="mb-5"><i class="fa fa-search "></i>&nbsp;寻找家教</h1>
+                                <div class="d-flex justify-content-between align-items-end pt-3">
+                                    <div class="text-uppercase">
+                                        <div class="font-weight-bold d-block">发布信息</div><small class="text-gray"></small>
+                                    </div>
+
+                                </div>
                             </div>
-                        </div></a></div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 mb-4 mb-lg-0">
+                        <a href="#" class="card rounded credit-card bg-hover-gradient-blue">
+                            <div class="content d-flex flex-column justify-content-between p-4">
+                                <h1 class="mb-5"><i class="fa fa-tasks "></i>&nbsp;我的家教</h1>
+                                <div class="d-flex justify-content-between align-items-end pt-3">
+                                    <div class="text-uppercase">
+                                        <div class="font-weight-bold d-block">历史订单</div><small class="text-gray"></small>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 mb-4 mb-lg-0">
+                        <a href="#" class="card rounded credit-card bg-hover-gradient-green">
+                            <div class="content d-flex flex-column justify-content-between p-4">
+                                <h1 class="mb-5"><i class="fa fa-th"></i>&nbsp;探索</h1>
+                                <div class="d-flex justify-content-between align-items-end pt-3">
+                                    <div class="text-uppercase">
+                                        <div class="font-weight-bold d-block">查看全部信息</div><small class="text-gray"></small>
+                                    </div>
+                                    <h4 class="mb-0">${ordersNum}</h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </section>
-            </c:if>
         </div>
         <footer class="footer bg-white shadow align-self-end py-3 px-xl-5 w-100">
             <div class="container-fluid">

@@ -90,14 +90,14 @@
     <div id="sidebar" class="sidebar py-3">
         <div class="text-gray-400 text-uppercase px-3 px-lg-4 py-4 font-weight-bold small headings-font-family">主菜单</div>
         <ul class="sidebar-menu list-unstyled">
-            <li class="sidebar-list-item"><a href="/user/toMain" class="sidebar-link text-muted active"><i class="o-home-1 mr-3 text-gray"></i><span>首页</span></a></li>
+            <li class="sidebar-list-item"><a href="/user/toMain" class="sidebar-link text-muted"><i class="o-home-1 mr-3 text-gray"></i><span>首页</span></a></li>
             <li class="sidebar-list-item"><a href="/user/toOrderManager" class="sidebar-link text-muted" ><i class="o-survey-1 mr-3 text-gray"></i><span>家教中心</span></a></li>
-            <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-user-1 mr-3 text-gray"></i><span>用户</span></a>
-                <div id="pages" class="collapse">
+            <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages" aria-expanded="true" aria-controls="pages" class="sidebar-link text-muted"><i class="o-user-1 mr-3 text-gray"></i><span>用户</span></a>
+                <div id="pages" class="collapse show">
                     <ul class="sidebar-menu list-unstyled border-left border-primary border-thick">
                         <li class="sidebar-list-item"><a href="/user/toSetting" class="sidebar-link text-muted pl-lg-5">修改资料</a></li>
                         <li class="sidebar-list-item"><a href="/user/toPassword" class="sidebar-link text-muted pl-lg-5">修改密码</a></li>
-                        <li class="sidebar-list-item"><a href="/user/toDeposit" class="sidebar-link text-muted pl-lg-5">押金管理</a></li>
+                        <li class="sidebar-list-item"><a href="/user/toDeposit" class="sidebar-link text-muted pl-lg-5 active">押金管理</a></li>
                     </ul>
                 </div>
             </li>
@@ -106,20 +106,32 @@
     </div>
     <div class="page-holder w-100 d-flex flex-wrap">
         <div class="container-fluid px-xl-5">
-            <c:if test="${not empty msg}"><div class="alert alert-success">${msg}</div></c:if>
-            <c:if test="${user.status == 0}">
             <section class="py-5">
                 <div class="row">
-                    <div class="col-lg-12"><a href="/user/deposit" class="message card px-5 py-3 mb-4 bg-hover-gradient-primary no-anchor-style">
-                        <div class="row">
-                            <div class="col-lg-12 d-flex align-items-center flex-column flex-lg-row text-center text-md-left">
-                                <div class="bg-gray-100 roundy px-4 py-1 mr-0 mr-lg-3 mt-2 mt-lg-0 text-dark exclode">温馨提示</div>
-                                <p class="mb-0 mt-3 mt-lg-0">您还未缴纳押金，为保证本系统功能正常使用，请缴纳押金.</p>
+                    <div class="col-lg-12 mb-5">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="h6 text-uppercase mb-0">押金管理</h3>
                             </div>
-                        </div></a></div>
+                            <div class="card-body">
+                                <c:if test="${not empty msg}"><div class="alert-${msg_type} alert">${msg}</div></c:if>
+                                <c:if test="${user.status == 1}">
+                                    <center>
+                                        <h1>已缴纳押金：￥1000</h1>
+                                        <a href="/user/unDeposit" class="btn-primary btn" style="margin-top: 100px">退押金</a>
+                                    </center>
+                                </c:if>
+                                <c:if test="${user.status == 0}">
+                                    <center>
+                                        <h1>还未缴纳押金，请尽快缴纳</h1>
+                                        <a href="/user/deposit" class="btn-primary btn" style="margin-top: 100px">缴纳押金</a>
+                                    </center>
+                                </c:if>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
-            </c:if>
         </div>
         <footer class="footer bg-white shadow align-self-end py-3 px-xl-5 w-100">
             <div class="container-fluid">

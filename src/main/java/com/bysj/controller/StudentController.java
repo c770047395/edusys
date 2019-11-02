@@ -80,5 +80,87 @@ public class StudentController {
         modelMap.addFlashAttribute("msg_type","success");
         return "redirect:/user/toLogin";
     }
+    @RequestMapping("/logout")
+    public String logout(HttpSession session){
+        session.invalidate();
+        return "redirect:/user/toLogin";
+    }
+    @RequestMapping("/deposit")
+    public String deposit(HttpSession session, RedirectAttributes modelMap){
+        Student user = (Student) session.getAttribute("user");
+        user.setStatus(1);
+        studentService.updateStudent(user);
+        session.setAttribute("user",user);
+        modelMap.addFlashAttribute("msg","缴纳押金成功");
+        modelMap.addFlashAttribute("msg_type","success");
+        return "redirect:/user/toDeposit";
+    }
+    @RequestMapping("/unDeposit")
+    public String unDeposit(HttpSession session, RedirectAttributes modelMap){
+        Student user = (Student) session.getAttribute("user");
+        user.setStatus(0);
+        studentService.updateStudent(user);
+        session.setAttribute("user",user);
+        modelMap.addFlashAttribute("msg","退还押金成功");
+        modelMap.addFlashAttribute("msg_type","success");
+        return "redirect:/user/toDeposit";
+    }
+
+    @RequestMapping("/toSetting")
+    public String toSetting(){
+        return "setting";
+    }
+    @RequestMapping("/toPassword")
+    public String toPassword(){
+        return "changePassword";
+    }
+    @RequestMapping("/toDeposit")
+    public String toDeposit(){
+        return "changeDeposit";
+    }
+
+    @RequestMapping("/updateUser")
+    public String updateUser(HttpSession session,Student student,RedirectAttributes modelMap){
+        Student user =(Student) session.getAttribute("user");
+        user.setName(student.getName());
+        user.setSex(student.getSex());
+        user.setIdNumber(student.getIdNumber());
+        user.setArea(student.getArea());
+        user.setAddress(student.getAddress());
+        user.setPhone(student.getPhone());
+        studentService.updateStudent(user);
+        session.setAttribute("user",user);
+        modelMap.addFlashAttribute("msg","修改成功");
+        modelMap.addFlashAttribute("msg_type","success");
+        return "redirect:/user/toSetting";
+    }
+    @RequestMapping("/changePassword")
+    public String changePassword(HttpSession session,String oldPassword,String newPassword,RedirectAttributes modelMap){
+        Student user =(Student) session.getAttribute("user");
+        if(!user.getPassword().equals(oldPassword)){
+            modelMap.addFlashAttribute("msg","原密码错误");
+            modelMap.addFlashAttribute("msg_type","warning");
+            return "redirect:/user/toPassword";
+        }
+        if(oldPassword.equals(newPassword)){
+            modelMap.addFlashAttribute("msg","新密码与原密码重复");
+            modelMap.addFlashAttribute("msg_type","warning");
+            return "redirect:/user/toPassword";
+        }
+
+        user.setPassword(newPassword);
+        studentService.updateStudent(user);
+        modelMap.addFlashAttribute("msg","修改成功");
+        modelMap.addFlashAttribute("msg_type","success");
+        return "redirect:/user/toPassword";
+    }
+
+    @RequestMapping("/toOrderManager")
+    public String toOrderManager(Model model){
+        List<Orders> ordersList = ordersService.queryAllOrders();
+        model.addAttribute("ordersNum",ordersList.size());
+        return "orderManager";
+    }
+
 
 }

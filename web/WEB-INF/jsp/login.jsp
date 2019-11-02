@@ -47,7 +47,7 @@
                 <h2 class="mb-4">欢迎登录！</h2>
                 <form id="loginForm" action="/user/login" method="post"  class="mt-4">
                     <div class="form-group mb-4">
-                        <input type="text" name="username" placeholder="请输入用户名" required class="form-control border-0 shadow form-control-lg">
+                        <input type="text" name="username" placeholder="请输入用户名" required class="form-control border-0 shadow form-control-lg text-violet">
                     </div>
                     <div class="form-group mb-4">
                         <input type="password" name="password" placeholder="请输入密码" required class="form-control border-0 shadow form-control-lg text-violet">

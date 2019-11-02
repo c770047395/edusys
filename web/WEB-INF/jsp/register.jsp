@@ -47,7 +47,7 @@
                 <h2 class="mb-4">欢迎注册！</h2>
                 <form id="loginForm" action="/user/register" method="post"  class="mt-4">
                     <div class="form-group mb-4">
-                        <input type="text" name="username" placeholder="请输入用户名" required class="form-control border-0 shadow form-control-lg">
+                        <input type="text" name="username" placeholder="请输入用户名" required class="form-control border-0 shadow form-control-lg  text-violet">
                     </div>
                     <div class="form-group mb-4">
                         <input type="password" name="password" placeholder="请输入密码" required class="form-control border-0 shadow form-control-lg text-violet">
@@ -59,10 +59,22 @@
                         <input type="text" name="phone" placeholder="请输入联系方式" required class="form-control border-0 shadow form-control-lg text-violet">
                     </div>
                     <div class="form-group mb-4">
-                        <select name="sex" class="form-control border-0 shadow form-control-lg text-violet">
+                        <select name="sex" required class="form-control border-0 shadow form-control-lg text-violet">
+                            <option value="" selected disabled>请选择性别</option>
                             <option value="男">男</option>
                             <option value="女">女</option>
                         </select>
+                    </div>
+                    <div class="form-group mb-4">
+                        <select name="sq" required class="form-control border-0 shadow form-control-lg text-violet">
+                            <option value="" selected disabled>请选择密保问题</option>
+                            <option value="出生地是？">出生地是？</option>
+                            <option value="父亲的名字是？">父亲的名字是？</option>
+                            <option value="母亲的名字是？">母亲的名字是？</option>
+                        </select>
+                    </div>
+                    <div class="form-group mb-4">
+                        <input type="text" name="an"  placeholder="请输入密保问题答案" required class="form-control border-0 shadow form-control-lg text-violet">
                     </div>
                     <button type="submit" class="btn btn-primary shadow px-5">提交</button>&nbsp;|&nbsp;已有账号？<a href="/user/toLogin">返回登录</a>
                 </form>
