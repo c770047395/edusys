@@ -38,7 +38,7 @@
 <body>
 <!-- navbar-->
 <header class="header">
-    <nav class="navbar navbar-expand-lg px-4 py-2 bg-white shadow"><a href="#" class="sidebar-toggler text-gray-500 mr-4 mr-lg-5 lead"><i class="fas fa-align-left"></i></a><a href="/user/toMain" class="navbar-brand font-weight-bold text-uppercase text-base">家教平台</a>
+    <nav class="navbar navbar-expand-lg px-4 py-2 bg-white shadow"><a href="#" class="sidebar-toggler text-gray-500 mr-4 mr-lg-5 lead"><i class="fas fa-align-left"></i></a><a href="/${type}/toMain" class="navbar-brand font-weight-bold text-uppercase text-base">家教平台</a>
         <ul class="ml-auto d-flex align-items-center list-unstyled mb-0">
             <li class="nav-item">
                 <form id="searchForm" class="ml-auto d-none d-lg-block">
@@ -106,6 +106,9 @@
     </div>
     <div class="page-holder w-100 d-flex flex-wrap">
         <div class="container-fluid px-xl-5">
+
+            <c:if test="${not empty msg}"><div class="alert-${msg_type} alert">${msg}</div></c:if>
+
             <section class="py-5">
                 <div class="row">
                     <div class="col-lg-12">
@@ -167,7 +170,7 @@
                                     </c:if>
                                     <c:if test="${order.status == 2}">
                                         <strong>联系人电话：</strong>${order.student.phone}
-                                        <br/><strong>家教详细地址：</strong>${order.student.address}
+                                        <br/><strong>家教详细地址：</strong>${order.address}
                                     </c:if>
                                 </div>
                             </c:if>
@@ -206,6 +209,22 @@
                                                 毕业学校:${order.teacher.school}<br/>
                                                 联系电话:${order.teacher.phone}<br/>
                                                 描述:${order.teacher.description}<br/>
+                                            </div>
+                                            <div class="modal-header">
+                                                <h4 class="modal-title">近期评价</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <c:forEach items="${evalutionList}" var="evalution">
+                                                    <div class="col-lg-12"><a class="message card px-5 py-3 mb-4 bg-hover-gradient-primary no-anchor-style">
+                                                        <div class="row">
+                                                            <div class="col-lg-3 "><img src="/static/img/avatar-1.jpg" alt="..." style="max-width: 3rem" class="rounded-circle mx-3 my-2 my-lg-0">
+                                                            </div>
+                                                            <div class="col-lg-9 ">
+                                                                <p class="mb-0 mt-3 mt-lg-0">${evalution.postContent}</p>
+                                                            </div>
+                                                        </div></a></div>
+                                                </c:forEach>
+
                                             </div>
 
                                             <!-- 模态框底部 -->
@@ -375,10 +394,40 @@
                                 </div>
                             </c:if>
 
-                            <c:if test="${type == 'teacher' && order.teacher.id == user.id  && order.status == 2}">
+                            <c:if test="${order.status == 2 && (order.student.id == user.id || order.teacher.id == user.id)}">
                                 <center>
-                                    <a href="#" class="btn btn-primary">评价订单</a>
+                                    <a href="/${type}/addEvalution?id=${order.id}" data-toggle="modal" data-target="#myModal1" class="btn btn-primary">评价订单</a>
                                 </center>
+                                <div class="modal fade" id="myModal1">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+
+                                            <!-- 模态框头部 -->
+                                            <div class="modal-header">
+                                                <h4 class="modal-title">添加评价</h4>
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            </div>
+                                            <form action="/${type}/addEvalution" method="post">
+                                            <!-- 模态框主体 -->
+                                            <div class="modal-body">
+                                                <div class="form-group">
+                                                    <label class="form-control-label text-uppercase">评价内容</label>
+                                                    <textarea type="text" placeholder="请输入评价内容" required name="postContent" class="form-control"></textarea>
+                                                </div>
+                                                <input type="hidden" name="orderId" value="${order.id}">
+                                                <input type="hidden" name="toTeacher" value="${order.teacher.id}">
+                                            </div>
+
+                                            <!-- 模态框底部 -->
+                                            <div class="modal-footer">
+                                                <button type="submit" class="btn btn-primary" >确认</button>
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                                            </div>
+                                            </form>
+
+                                        </div>
+                                    </div>
+                                </div>
                             </c:if>
 
                         </div>

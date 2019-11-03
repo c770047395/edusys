@@ -1,25 +1,35 @@
 package com.bysj.controller;
 
+import com.bysj.pojo.Evalution;
 import com.bysj.pojo.Orders;
 import com.bysj.pojo.Teacher;
+import com.bysj.service.EvalutionService;
 import com.bysj.service.OrdersService;
 import com.bysj.service.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.io.File;
+import java.io.IOException;
+import java.util.Date;
 import java.util.List;
 
 @Controller
 @RequestMapping("/teacher")
-public class TeacherControllerr {
+public class TeacherController {
     @Autowired
     private TeacherService teacherService;
     @Autowired
     private OrdersService ordersService;
+    @Autowired
+    private EvalutionService evalutionService;
 
     public void setTeacherService(TeacherService teacherService) {
         this.teacherService = teacherService;
@@ -29,11 +39,13 @@ public class TeacherControllerr {
         this.ordersService = ordersService;
     }
 
+    public void setEvalutionService(EvalutionService evalutionService) {
+        this.evalutionService = evalutionService;
+    }
+
     @RequestMapping("/toLogin")
     public String toLogin(HttpSession session, Model model){
-        if(session.getAttribute("user")!=null){
-            return "redirect:/teacher/toMain";
-        }
+
         model.addAttribute("title","家教老师");
         model.addAttribute("type","teacher");
         return "login";
@@ -50,9 +62,19 @@ public class TeacherControllerr {
             modelMap.addFlashAttribute("type","teacher");
             return "redirect:/teacher/toLogin";
         }
+        if(teacher.getStatus() < 0 ){
+            session.setAttribute("user",teacher);
+            return "redirect:/teacher/toUpload";
+        }
         session.setAttribute("user",teacher);
         session.setAttribute("type","teacher");
         return "redirect:/teacher/toMain";
+    }
+
+    @RequestMapping("/toUpload")
+    public String toUpload(Model model){
+        model.addAttribute("type","teacher");
+        return "teacherUpload";
     }
 
     @RequestMapping("/toMain")
@@ -73,6 +95,7 @@ public class TeacherControllerr {
             modelMap.addFlashAttribute("msg_type","danger");
             return "redirect:/teacher/toRegister";
         }
+        teacher.setStatus(-2);
         int result = teacherService.addTeacher(teacher);
         if(result!= 1){
             modelMap.addFlashAttribute("msg","未知错误，请联系管理员");
@@ -203,5 +226,63 @@ public class TeacherControllerr {
         ordersService.updateOrders(orders);
         model.addAttribute("order",orders);
         return "orderDetail";
+    }
+    @RequestMapping("/upload")
+    public String  fileUpload2(HttpSession session,String age,String school,String role,String idNumber,@RequestParam("pic") CommonsMultipartFile pic,@RequestParam("cert") CommonsMultipartFile ceri, HttpServletRequest request) throws IOException {
+        Teacher user = (Teacher) session.getAttribute("user");
+        user.setRole(role);
+        user.setAge(age);
+        user.setSchool(school);
+        user.setIdNumber(idNumber);
+        user.setStatus(-1);
+        //上传路径保存设置
+        String path = request.getServletContext().getRealPath("/cert");
+        File realPath = new File(path);
+        if (!realPath.exists()){
+            realPath.mkdir();
+        }
+        //上传文件地址
+        System.out.println("上传文件cert保存地址："+realPath);
+
+        //通过CommonsMultipartFile的方法直接写文件（注意这个时候）
+        ceri.transferTo(new File(realPath +"/"+ user.getId()+".jpg"));
+
+        //上传路径保存设置
+        String path1 = request.getServletContext().getRealPath("/pic");
+        File realPath1 = new File(path1);
+        if (!realPath1.exists()){
+            realPath1.mkdir();
+        }
+        //上传文件地址
+        System.out.println("上传文件pic保存地址："+realPath1);
+
+        //通过CommonsMultipartFile的方法直接写文件（注意这个时候）
+        pic.transferTo(new File(realPath1 +"/"+ user.getId()+".jpg"));
+
+        teacherService.updateTeacher(user);
+        session.setAttribute("user",user);
+
+        return "redirect:/teacher/toUpload";
+    }
+
+    @RequestMapping("/addEvalution")
+    public String addEvalution(Evalution evalution, RedirectAttributes model){
+        Evalution evalution1 = evalutionService.queryEvalutionById(evalution.getOrderId());
+        if(evalution1!= null){
+            evalution1.setAnTime(new Date());
+            evalution1.setAnContent(evalution.getPostContent());
+            evalution1.setToUser(evalution.getToTeacher());
+            evalutionService.updateEvalution(evalution1);
+        }else{
+            evalution1.setAnTime(new Date());
+            evalution1.setAnContent(evalution.getPostContent());
+            evalution1.setToUser(evalution.getToTeacher());
+            evalutionService.addEvalution(evalution);
+        }
+        model.addAttribute("id",evalution.getOrderId());
+        model.addFlashAttribute("msg","评价成功");
+        model.addFlashAttribute("msg_type","success");
+        return "redirect:/teacher/orderDetail";
+
     }
 }

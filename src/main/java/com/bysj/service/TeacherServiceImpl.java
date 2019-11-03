@@ -36,6 +36,10 @@ public class TeacherServiceImpl implements TeacherService {
         return teacherMapper.deleteTeacher(id);
     }
 
+    public List<Teacher> queryTeacherByStatus(int status) {
+        return teacherMapper.queryTeacherByStatus(status);
+    }
+
     public Teacher login(String username, String password) {
         Teacher teacher = teacherMapper.queryTeacherByUsername(username);
         if (teacher == null){

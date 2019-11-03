@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bysj.dao.EvalutionMapper">
+
+    <select id="queryEvalutionById" resultType="Evalution">
+        select * from evalution where order_id = #{id}
+    </select>
+    <select id="queryEvalutionByUserId" resultType="Evalution">
+        select * from evalution where to_user = #{id}
+    </select>
+    <select id="queryEvalutionByTeacherId" resultType="Evalution">
+        select * from evalution where to_teacher = #{id}
+    </select>
+    <insert id="addEvalution" parameterType="Evalution">
+        insert into evalution(post_time,post_content,an_time,an_content,order_id,to_user,to_teacher)
+        values(#{postTime},#{postContent},#{anTime},#{anContent},#{orderId},#{toUser},#{toTeacher})
+    </insert>
+    <update id="updateEvalution" parameterType="Evalution">
+        update evalution set post_time = #{postTime},post_content = #{postContent},an_time=#{anTime},an_content=#{anContent},order_id = #{orderId},to_user=#{toUser},to_teacher=#{toTeacher}
+    </update>
+
+</mapper>

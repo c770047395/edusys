@@ -38,7 +38,7 @@
 <body>
 <!-- navbar-->
 <header class="header">
-    <nav class="navbar navbar-expand-lg px-4 py-2 bg-white shadow"><a href="#" class="sidebar-toggler text-gray-500 mr-4 mr-lg-5 lead"><i class="fas fa-align-left"></i></a><a href="/user/toMain" class="navbar-brand font-weight-bold text-uppercase text-base">家教平台</a>
+    <nav class="navbar navbar-expand-lg px-4 py-2 bg-white shadow"><a href="#" class="sidebar-toggler text-gray-500 mr-4 mr-lg-5 lead"><i class="fas fa-align-left"></i></a><a href="/${type}/toMain" class="navbar-brand font-weight-bold text-uppercase text-base">家教平台</a>
         <ul class="ml-auto d-flex align-items-center list-unstyled mb-0">
             <li class="nav-item">
                 <form id="searchForm" class="ml-auto d-none d-lg-block">

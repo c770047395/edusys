@@ -13,9 +13,12 @@
     <select id="queryTeacherByUsername" resultType="Teacher">
         select * from teacher where username = #{username}
     </select>
+    <select id="queryTeacherByStatus" resultType="Teacher">
+        select * from teacher where status = #{status}
+    </select>
     <insert id="addTeacher" parameterType="Teacher">
-        insert into teacher(username,password,name,sex,id_number,age,role,school,description,phone,sq,an)
-        values(#{username},#{password},#{name},#{sex},#{idNumber},#{age},#{role},#{school},#{description},#{phone},#{sq},#{an})
+        insert into teacher(username,password,name,sex,id_number,age,role,school,description,phone,sq,an,status)
+        values(#{username},#{password},#{name},#{sex},#{idNumber},#{age},#{role},#{school},#{description},#{phone},#{sq},#{an},#{status})
     </insert>
     <update id="updateTeacher" parameterType="Teacher">
         update teacher set password = #{password},name=#{name},sex=#{sex},id_number=#{idNumber},age= #{age},role= #{role},school=#{school},description=#{description},phone=#{phone},sq=#{sq},an=#{an},status=#{status} where id = #{id}

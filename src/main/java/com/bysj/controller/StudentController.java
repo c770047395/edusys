@@ -1,7 +1,9 @@
 package com.bysj.controller;
 
+import com.bysj.pojo.Evalution;
 import com.bysj.pojo.Orders;
 import com.bysj.pojo.Student;
+import com.bysj.service.EvalutionService;
 import com.bysj.service.OrdersService;
 import com.bysj.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +23,8 @@ public class StudentController {
     private StudentService studentService;
     @Autowired
     private OrdersService ordersService;
+    @Autowired
+    private EvalutionService evalutionService;
 
     public void setStudentService(StudentService studentService) {
         this.studentService = studentService;
@@ -30,11 +34,13 @@ public class StudentController {
         this.ordersService = ordersService;
     }
 
+    public void setEvalutionService(EvalutionService evalutionService) {
+        this.evalutionService = evalutionService;
+    }
+
     @RequestMapping("/toLogin")
     public String toLogin(HttpSession session,Model model){
-        if(session.getAttribute("user")!=null){
-            return "redirect:/user/toMain";
-        }
+
         model.addAttribute("title","家长/学生");
         model.addAttribute("type","user");
         return "login";
@@ -201,6 +207,10 @@ public class StudentController {
     public String orderDetail(int id,Model model){
         Orders orders = ordersService.queryOrdersById(id);
         model.addAttribute("order",orders);
+        if(orders.getTeacher() != null) {
+            List<Evalution> evalutionList = evalutionService.queryEvalutionByTeacherId(orders.getTeacher().getId());
+            model.addAttribute("evalutionList", evalutionList);
+        }
         return "orderDetail";
     }
 
@@ -230,6 +240,24 @@ public class StudentController {
         ordersService.updateOrders(orders);
         model.addAttribute("order",orders);
         return "orderDetail";
+    }
+    @RequestMapping("/addEvalution")
+    public String addEvalution(Evalution evalution,RedirectAttributes model){
+        Evalution evalution1 = evalutionService.queryEvalutionById(evalution.getOrderId());
+        if(evalution1!= null){
+            evalution1.setPostTime(new Date());
+            evalution1.setPostContent(evalution.getPostContent());
+            evalution1.setToTeacher(evalution.getToTeacher());
+            evalutionService.updateEvalution(evalution1);
+        }else{
+            evalution.setPostTime(new Date());
+            evalutionService.addEvalution(evalution);
+        }
+        model.addAttribute("id",evalution.getOrderId());
+        model.addFlashAttribute("msg","评价成功");
+        model.addFlashAttribute("msg_type","success");
+        return "redirect:/user/orderDetail";
+
     }
 
 }
