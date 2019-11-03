@@ -80,7 +80,7 @@
             <li class="nav-item dropdown ml-auto"><a id="userInfo" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"><img src="/static/img/avatar-6.jpg" alt="Jason Doe" style="max-width: 2.5rem;" class="img-fluid rounded-circle shadow"></a>
                 <div aria-labelledby="userInfo" class="dropdown-menu"><a href="#" class="dropdown-item"><strong class="d-block text-uppercase headings-font-family">${user.username}</strong><small>${user.name}</small></a>
                     <div class="dropdown-divider"></div><a href="#" class="dropdown-item">设置</a><a href="#" class="dropdown-item">日志       </a>
-                    <div class="dropdown-divider"></div><a href="/user/logout" class="dropdown-item">退出登录</a>
+                    <div class="dropdown-divider"></div><a href="/${type}/logout" class="dropdown-item">退出登录</a>
                 </div>
             </li>
         </ul>
@@ -90,18 +90,18 @@
     <div id="sidebar" class="sidebar py-3">
         <div class="text-gray-400 text-uppercase px-3 px-lg-4 py-4 font-weight-bold small headings-font-family">主菜单</div>
         <ul class="sidebar-menu list-unstyled">
-            <li class="sidebar-list-item"><a href="/user/toMain" class="sidebar-link text-muted"><i class="o-home-1 mr-3 text-gray"></i><span>首页</span></a></li>
-            <li class="sidebar-list-item"><a href="/user/toOrderManager" class="sidebar-link text-muted active" ><i class="o-survey-1 mr-3 text-gray"></i><span>家教中心</span></a></li>
+            <li class="sidebar-list-item"><a href="/${type}/toMain" class="sidebar-link text-muted"><i class="o-home-1 mr-3 text-gray"></i><span>首页</span></a></li>
+            <li class="sidebar-list-item"><a href="/${type}/toOrderManager" class="sidebar-link text-muted active" ><i class="o-survey-1 mr-3 text-gray"></i><span>家教中心</span></a></li>
             <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-user-1 mr-3 text-gray"></i><span>用户</span></a>
                 <div id="pages" class="collapse">
                     <ul class="sidebar-menu list-unstyled border-left border-primary border-thick">
-                        <li class="sidebar-list-item"><a href="/user/toSetting" class="sidebar-link text-muted pl-lg-5">修改资料</a></li>
-                        <li class="sidebar-list-item"><a href="/user/toPassword" class="sidebar-link text-muted pl-lg-5">修改密码</a></li>
-                        <li class="sidebar-list-item"><a href="/user/toDeposit" class="sidebar-link text-muted pl-lg-5">押金管理</a></li>
+                        <li class="sidebar-list-item"><a href="/${type}/toSetting" class="sidebar-link text-muted pl-lg-5">修改资料</a></li>
+                        <li class="sidebar-list-item"><a href="/${type}/toPassword" class="sidebar-link text-muted pl-lg-5">修改密码</a></li>
+                        <li class="sidebar-list-item"><a href="/${type}/toDeposit" class="sidebar-link text-muted pl-lg-5">押金管理</a></li>
                     </ul>
                 </div>
             </li>
-            <li class="sidebar-list-item"><a href="/user/logout" class="sidebar-link text-muted"><i class="o-exit-1 mr-3 text-gray"></i><span>退出登录</span></a></li>
+            <li class="sidebar-list-item"><a href="/${type}/logout" class="sidebar-link text-muted"><i class="o-exit-1 mr-3 text-gray"></i><span>退出登录</span></a></li>
         </ul>
     </div>
     <div class="page-holder w-100 d-flex flex-wrap">
@@ -135,14 +135,20 @@
                                             <td>${item.level}</td>
                                             <td>${item.area}</td>
                                             <td>
+                                                <c:if test="${item.status == -1 }">
+                                                    <div class="badge badge-dark">已取消</div>
+                                                </c:if>
                                                 <c:if test="${item.status == 0 }">
                                                     <div class="badge badge-secondary">未找到</div>
                                                 </c:if>
-                                                <c:if test="${item.status != 0 }">
+                                                <c:if test="${item.status == 1 }">
+                                                    <div class="badge badge-warning">待确认</div>
+                                                </c:if>
+                                                <c:if test="${item.status == 2 }">
                                                     <div class="badge badge-success">已找到</div>
                                                 </c:if>
                                             </td>
-                                            <td><a class="btn btn-primary" href="/user/orderDetail?id=${item.id}">查看详情</a></td>
+                                            <td><a class="btn btn-primary" href="/${type}/orderDetail?id=${item.id}">查看详情</a></td>
                                         </tr>
                                     </c:forEach>
                                     </tbody>

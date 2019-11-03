@@ -45,14 +45,14 @@
             <div class="col-lg-5 px-lg-4">
                 <h1 class="text-base text-primary text-uppercase mb-4">尊敬的${title}</h1>
                 <h2 class="mb-4">欢迎登录！</h2>
-                <form id="loginForm" action="/user/login" method="post"  class="mt-4">
+                <form id="loginForm" action="/${type}/login" method="post"  class="mt-4">
                     <div class="form-group mb-4">
                         <input type="text" name="username" placeholder="请输入用户名" required class="form-control border-0 shadow form-control-lg text-violet">
                     </div>
                     <div class="form-group mb-4">
                         <input type="password" name="password" placeholder="请输入密码" required class="form-control border-0 shadow form-control-lg text-violet">
                     </div>
-                    <button type="submit" class="btn btn-primary shadow px-5">登录</button>&nbsp;|&nbsp;<a href="/user/toRegister">免费注册</a>
+                    <button type="submit" class="btn btn-primary shadow px-5">登录</button>&nbsp;|&nbsp;<a href="/${type}/toRegister">免费注册</a>
                 </form>
             </div>
         </div>

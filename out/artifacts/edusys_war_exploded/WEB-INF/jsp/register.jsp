@@ -45,7 +45,7 @@
             <div class="col-lg-5 px-lg-4">
                 <h1 class="text-base text-primary text-uppercase mb-4">尊敬的${title}</h1>
                 <h2 class="mb-4">欢迎注册！</h2>
-                <form id="loginForm" action="/user/register" method="post"  class="mt-4">
+                <form id="loginForm" action="/${type}/register" method="post"  class="mt-4">
                     <div class="form-group mb-4">
                         <input type="text" name="username" placeholder="请输入用户名" required class="form-control border-0 shadow form-control-lg  text-violet">
                     </div>
@@ -76,7 +76,7 @@
                     <div class="form-group mb-4">
                         <input type="text" name="an"  placeholder="请输入密保问题答案" required class="form-control border-0 shadow form-control-lg text-violet">
                     </div>
-                    <button type="submit" class="btn btn-primary shadow px-5">提交</button>&nbsp;|&nbsp;已有账号？<a href="/user/toLogin">返回登录</a>
+                    <button type="submit" class="btn btn-primary shadow px-5">提交</button>&nbsp;|&nbsp;已有账号？<a href="/${type}/toLogin">返回登录</a>
                 </form>
             </div>
         </div>

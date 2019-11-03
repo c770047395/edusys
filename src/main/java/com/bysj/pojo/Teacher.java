@@ -17,7 +17,7 @@ public class Teacher {
     private String age;
     private String role;
     private String school;
-    private String descripthon;
+    private String description;
     private String phone;
     private String sq;
     private String an;

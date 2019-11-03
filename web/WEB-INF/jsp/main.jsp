@@ -80,7 +80,7 @@
             <li class="nav-item dropdown ml-auto"><a id="userInfo" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"><img src="/static/img/avatar-6.jpg" alt="Jason Doe" style="max-width: 2.5rem;" class="img-fluid rounded-circle shadow"></a>
                 <div aria-labelledby="userInfo" class="dropdown-menu"><a href="#" class="dropdown-item"><strong class="d-block text-uppercase headings-font-family">${user.username}</strong><small>${user.name}</small></a>
                     <div class="dropdown-divider"></div><a href="#" class="dropdown-item">设置</a><a href="#" class="dropdown-item">日志       </a>
-                    <div class="dropdown-divider"></div><a href="/user/logout" class="dropdown-item">退出登录</a>
+                    <div class="dropdown-divider"></div><a href="/${type}/logout" class="dropdown-item">退出登录</a>
                 </div>
             </li>
         </ul>
@@ -90,18 +90,18 @@
     <div id="sidebar" class="sidebar py-3">
         <div class="text-gray-400 text-uppercase px-3 px-lg-4 py-4 font-weight-bold small headings-font-family">主菜单</div>
         <ul class="sidebar-menu list-unstyled">
-            <li class="sidebar-list-item"><a href="/user/toMain" class="sidebar-link text-muted active"><i class="o-home-1 mr-3 text-gray"></i><span>首页</span></a></li>
-            <li class="sidebar-list-item"><a href="/user/toOrderManager" class="sidebar-link text-muted" ><i class="o-survey-1 mr-3 text-gray"></i><span>家教中心</span></a></li>
+            <li class="sidebar-list-item"><a href="/${type}/toMain" class="sidebar-link text-muted active"><i class="o-home-1 mr-3 text-gray"></i><span>首页</span></a></li>
+            <li class="sidebar-list-item"><a href="/${type}/toOrderManager" class="sidebar-link text-muted" ><i class="o-survey-1 mr-3 text-gray"></i><span>家教中心</span></a></li>
             <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-user-1 mr-3 text-gray"></i><span>用户</span></a>
                 <div id="pages" class="collapse">
                     <ul class="sidebar-menu list-unstyled border-left border-primary border-thick">
-                        <li class="sidebar-list-item"><a href="/user/toSetting" class="sidebar-link text-muted pl-lg-5">修改资料</a></li>
-                        <li class="sidebar-list-item"><a href="/user/toPassword" class="sidebar-link text-muted pl-lg-5">修改密码</a></li>
-                        <li class="sidebar-list-item"><a href="/user/toDeposit" class="sidebar-link text-muted pl-lg-5">押金管理</a></li>
+                        <li class="sidebar-list-item"><a href="/${type}/toSetting" class="sidebar-link text-muted pl-lg-5">修改资料</a></li>
+                        <li class="sidebar-list-item"><a href="/${type}/toPassword" class="sidebar-link text-muted pl-lg-5">修改密码</a></li>
+                        <li class="sidebar-list-item"><a href="/${type}/toDeposit" class="sidebar-link text-muted pl-lg-5">押金管理</a></li>
                     </ul>
                 </div>
             </li>
-            <li class="sidebar-list-item"><a href="/user/logout" class="sidebar-link text-muted"><i class="o-exit-1 mr-3 text-gray"></i><span>退出登录</span></a></li>
+            <li class="sidebar-list-item"><a href="/${type}/logout" class="sidebar-link text-muted"><i class="o-exit-1 mr-3 text-gray"></i><span>退出登录</span></a></li>
         </ul>
     </div>
     <div class="page-holder w-100 d-flex flex-wrap">
@@ -110,13 +110,38 @@
             <c:if test="${user.status == 0}">
             <section class="py-5">
                 <div class="row">
-                    <div class="col-lg-12"><a href="/user/deposit" class="message card px-5 py-3 mb-4 bg-hover-gradient-primary no-anchor-style">
+                    <div class="col-lg-12"><a href="/${type}/deposit"  data-toggle="modal" data-target="#myModal"  class="message card px-5 py-3 mb-4 bg-hover-gradient-primary no-anchor-style">
                         <div class="row">
                             <div class="col-lg-12 d-flex align-items-center flex-column flex-lg-row text-center text-md-left">
                                 <div class="bg-gray-100 roundy px-4 py-1 mr-0 mr-lg-3 mt-2 mt-lg-0 text-dark exclode">温馨提示</div>
                                 <p class="mb-0 mt-3 mt-lg-0">您还未缴纳押金，为保证本系统功能正常使用，请缴纳押金.</p>
                             </div>
                         </div></a></div>
+                </div>
+                <!-- 模态框 -->
+                <div class="modal fade" id="myModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+
+                            <!-- 模态框头部 -->
+                            <div class="modal-header">
+                                <h4 class="modal-title">确认信息</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+
+                            <!-- 模态框主体 -->
+                            <div class="modal-body">
+                                缴纳押金：￥1000
+                            </div>
+
+                            <!-- 模态框底部 -->
+                            <div class="modal-footer">
+                                <a href="/${type}/deposit" class="btn btn-primary" >确认</a>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
             </section>
             </c:if>

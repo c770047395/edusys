@@ -15,7 +15,7 @@
         <association property="teacher" column="teacher_id" javaType="Teacher" select="getTeacher"/>
     </resultMap>
     <select id="queryAllOrders" resultMap="order">
-        select * from orders order by pub_time desc
+        select * from orders where status != -1 order by pub_time desc
     </select>
     <select id="queryOrdersById" resultMap="order">
         select * from orders where id = #{id}
@@ -31,7 +31,7 @@
         values(#{pubTime},#{finTime},#{checkNum},#{postNum},#{sub},#{level},#{area},#{address},#{content},#{price},#{weekNum},#{status},#{student.id},#{teacher.id})
     </insert>
     <update id="updateOrders" parameterType="Orders">
-        update orders set pub_time=#{pubTime},fin_time=#{finTime},check_num=#{checkNum},post_num=#{postNum},sub=#{sub},level=#{level},arrea=#{area},address=#{address},content=#{content},price=#{price},week_num#{weekNum},status=#{status},user_id=#{student.id},teacher_id=#{teacher.id} where id = #{id}
+        update orders set pub_time=#{pubTime},fin_time=#{finTime},check_num=#{checkNum},post_num=#{postNum},sub=#{sub},level=#{level},area=#{area},address=#{address},content=#{content},price=#{price},week_num=#{weekNum},status=#{status},user_id=#{student.id},teacher_id=#{teacher.id} where id = #{id}
     </update>
     <delete id="deleteOrders" >
         delete from orders where id = #{id}

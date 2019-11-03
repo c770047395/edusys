@@ -80,7 +80,7 @@
             <li class="nav-item dropdown ml-auto"><a id="userInfo" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"><img src="/static/img/avatar-6.jpg" alt="Jason Doe" style="max-width: 2.5rem;" class="img-fluid rounded-circle shadow"></a>
                 <div aria-labelledby="userInfo" class="dropdown-menu"><a href="#" class="dropdown-item"><strong class="d-block text-uppercase headings-font-family">${user.username}</strong><small>${user.name}</small></a>
                     <div class="dropdown-divider"></div><a href="#" class="dropdown-item">设置</a><a href="#" class="dropdown-item">日志       </a>
-                    <div class="dropdown-divider"></div><a href="/user/logout" class="dropdown-item">退出登录</a>
+                    <div class="dropdown-divider"></div><a href="/${type}/logout" class="dropdown-item">退出登录</a>
                 </div>
             </li>
         </ul>
@@ -90,26 +90,27 @@
     <div id="sidebar" class="sidebar py-3">
         <div class="text-gray-400 text-uppercase px-3 px-lg-4 py-4 font-weight-bold small headings-font-family">主菜单</div>
         <ul class="sidebar-menu list-unstyled">
-            <li class="sidebar-list-item"><a href="/user/toMain" class="sidebar-link text-muted"><i class="o-home-1 mr-3 text-gray"></i><span>首页</span></a></li>
-            <li class="sidebar-list-item"><a href="/user/toOrderManager" class="sidebar-link text-muted active" ><i class="o-survey-1 mr-3 text-gray"></i><span>家教中心</span></a></li>
+            <li class="sidebar-list-item"><a href="/${type}/toMain" class="sidebar-link text-muted"><i class="o-home-1 mr-3 text-gray"></i><span>首页</span></a></li>
+            <li class="sidebar-list-item"><a href="/${type}/toOrderManager" class="sidebar-link text-muted active" ><i class="o-survey-1 mr-3 text-gray"></i><span>家教中心</span></a></li>
             <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-user-1 mr-3 text-gray"></i><span>用户</span></a>
                 <div id="pages" class="collapse">
                     <ul class="sidebar-menu list-unstyled border-left border-primary border-thick">
-                        <li class="sidebar-list-item"><a href="/user/toSetting" class="sidebar-link text-muted pl-lg-5">修改资料</a></li>
-                        <li class="sidebar-list-item"><a href="/user/toPassword" class="sidebar-link text-muted pl-lg-5">修改密码</a></li>
-                        <li class="sidebar-list-item"><a href="/user/toDeposit" class="sidebar-link text-muted pl-lg-5">押金管理</a></li>
+                        <li class="sidebar-list-item"><a href="/${type}/toSetting" class="sidebar-link text-muted pl-lg-5">修改资料</a></li>
+                        <li class="sidebar-list-item"><a href="/${type}/toPassword" class="sidebar-link text-muted pl-lg-5">修改密码</a></li>
+                        <li class="sidebar-list-item"><a href="/${type}/toDeposit" class="sidebar-link text-muted pl-lg-5">押金管理</a></li>
                     </ul>
                 </div>
             </li>
-            <li class="sidebar-list-item"><a href="/user/logout" class="sidebar-link text-muted"><i class="o-exit-1 mr-3 text-gray"></i><span>退出登录</span></a></li>
+            <li class="sidebar-list-item"><a href="/${type}/logout" class="sidebar-link text-muted"><i class="o-exit-1 mr-3 text-gray"></i><span>退出登录</span></a></li>
         </ul>
     </div>
     <div class="page-holder w-100 d-flex flex-wrap">
         <div class="container-fluid px-xl-5">
             <section class="py-5">
                 <div class="row text-dark">
+                    <c:if test="${type=='user'}">
                     <div class="col-lg-4 mb-4 mb-lg-0">
-                        <a href="/user/toPubInfo" class="card rounded credit-card bg-hover-gradient-violet">
+                        <a href="/${type}/toPubInfo" class="card rounded credit-card bg-hover-gradient-violet">
                             <div class="content d-flex flex-column justify-content-between p-4">
                                 <h1 class="mb-5"><i class="fa fa-search "></i>&nbsp;寻找家教</h1>
                                 <div class="d-flex justify-content-between align-items-end pt-3">
@@ -121,8 +122,9 @@
                             </div>
                         </a>
                     </div>
+                    </c:if>
                     <div class="col-lg-4 mb-4 mb-lg-0">
-                        <a href="/user/toQueryMe" class="card rounded credit-card bg-hover-gradient-blue">
+                        <a href="/${type}/toQueryMe" class="card rounded credit-card bg-hover-gradient-blue">
                             <div class="content d-flex flex-column justify-content-between p-4">
                                 <h1 class="mb-5"><i class="fa fa-tasks "></i>&nbsp;我的家教</h1>
                                 <div class="d-flex justify-content-between align-items-end pt-3">
@@ -135,7 +137,7 @@
                         </a>
                     </div>
                     <div class="col-lg-4 mb-4 mb-lg-0">
-                        <a href="/user/toQueryAll" class="card rounded credit-card bg-hover-gradient-green">
+                        <a href="/${type}/toQueryAll" class="card rounded credit-card bg-hover-gradient-green">
                             <div class="content d-flex flex-column justify-content-between p-4">
                                 <h1 class="mb-5"><i class="fa fa-th"></i>&nbsp;探索</h1>
                                 <div class="d-flex justify-content-between align-items-end pt-3">

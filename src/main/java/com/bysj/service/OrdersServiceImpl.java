@@ -58,6 +58,7 @@ public class OrdersServiceImpl implements OrdersService {
 
     public int postOrders(int id, int teacher_id) {
         Orders orders = ordersMapper.queryOrdersById(id);
+        orders.setStatus(1);
         Teacher teacher = new Teacher();
         teacher.setId(teacher_id);
         orders.setTeacher(teacher);

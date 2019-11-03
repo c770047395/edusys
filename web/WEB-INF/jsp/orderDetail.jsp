@@ -80,7 +80,7 @@
             <li class="nav-item dropdown ml-auto"><a id="userInfo" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"><img src="/static/img/avatar-6.jpg" alt="Jason Doe" style="max-width: 2.5rem;" class="img-fluid rounded-circle shadow"></a>
                 <div aria-labelledby="userInfo" class="dropdown-menu"><a href="#" class="dropdown-item"><strong class="d-block text-uppercase headings-font-family">${user.username}</strong><small>${user.name}</small></a>
                     <div class="dropdown-divider"></div><a href="#" class="dropdown-item">设置</a><a href="#" class="dropdown-item">日志       </a>
-                    <div class="dropdown-divider"></div><a href="/user/logout" class="dropdown-item">退出登录</a>
+                    <div class="dropdown-divider"></div><a href="/${type}/logout" class="dropdown-item">退出登录</a>
                 </div>
             </li>
         </ul>
@@ -90,18 +90,18 @@
     <div id="sidebar" class="sidebar py-3">
         <div class="text-gray-400 text-uppercase px-3 px-lg-4 py-4 font-weight-bold small headings-font-family">主菜单</div>
         <ul class="sidebar-menu list-unstyled">
-            <li class="sidebar-list-item"><a href="/user/toMain" class="sidebar-link text-muted"><i class="o-home-1 mr-3 text-gray"></i><span>首页</span></a></li>
-            <li class="sidebar-list-item"><a href="/user/toOrderManager" class="sidebar-link text-muted active" ><i class="o-survey-1 mr-3 text-gray"></i><span>家教中心</span></a></li>
+            <li class="sidebar-list-item"><a href="/${type}/toMain" class="sidebar-link text-muted"><i class="o-home-1 mr-3 text-gray"></i><span>首页</span></a></li>
+            <li class="sidebar-list-item"><a href="/${type}/toOrderManager" class="sidebar-link text-muted active" ><i class="o-survey-1 mr-3 text-gray"></i><span>家教中心</span></a></li>
             <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-user-1 mr-3 text-gray"></i><span>用户</span></a>
                 <div id="pages" class="collapse">
                     <ul class="sidebar-menu list-unstyled border-left border-primary border-thick">
-                        <li class="sidebar-list-item"><a href="/user/toSetting" class="sidebar-link text-muted pl-lg-5">修改资料</a></li>
-                        <li class="sidebar-list-item"><a href="/user/toPassword" class="sidebar-link text-muted pl-lg-5">修改密码</a></li>
-                        <li class="sidebar-list-item"><a href="/user/toDeposit" class="sidebar-link text-muted pl-lg-5">押金管理</a></li>
+                        <li class="sidebar-list-item"><a href="/${type}/toSetting" class="sidebar-link text-muted pl-lg-5">修改资料</a></li>
+                        <li class="sidebar-list-item"><a href="/${type}/toPassword" class="sidebar-link text-muted pl-lg-5">修改密码</a></li>
+                        <li class="sidebar-list-item"><a href="/${type}/toDeposit" class="sidebar-link text-muted pl-lg-5">押金管理</a></li>
                     </ul>
                 </div>
             </li>
-            <li class="sidebar-list-item"><a href="/user/logout" class="sidebar-link text-muted"><i class="o-exit-1 mr-3 text-gray"></i><span>退出登录</span></a></li>
+            <li class="sidebar-list-item"><a href="/${type}/logout" class="sidebar-link text-muted"><i class="o-exit-1 mr-3 text-gray"></i><span>退出登录</span></a></li>
         </ul>
     </div>
     <div class="page-holder w-100 d-flex flex-wrap">
@@ -111,16 +111,31 @@
                     <div class="col-lg-12">
                         <div class="card px-5 py-4">
                             <h2 class="mb-0 d-flex align-items-center" ><span>${order.sub}-${order.level}</span>
+                                <c:if test="${order.status == -1}">
+                                    <div class="badge badge-dark" style="margin-left: 20px;">已取消</div>
+                                </c:if>
                                 <c:if test="${order.status == 0}">
                                     <div class="badge badge-secondary" style="margin-left: 20px;">未找到</div>
                                 </c:if>
                                 <c:if test="${order.status == 1}">
+                                    <div class="badge badge-warning" style="margin-left: 20px;">待确认</div>
+                                </c:if>
+                                <c:if test="${order.status == 2}">
                                     <div class="badge badge-success" style="margin-left: 20px;">已找到</div>
                                 </c:if>
 
                             </h2>
                             <span class="text-muted">发布于：<fmt:formatDate value="${order.pubTime}" pattern="yyyy-MM-dd HH:mm:ss"></fmt:formatDate></span>
                             <div class="py-4">
+                                <div class="bg-white shadow roundy px-4 py-3 d-flex align-items-center justify-content-between mb-4">
+                                    <div class="flex-grow-1 d-flex align-items-center">
+                                        <div class="dot mr-3 bg-green"></div>
+                                        <div class="text">
+                                            <h6 class="mb-0">家教地区</h6><span class="text-black-50">${order.area}</span>
+                                        </div>
+                                    </div>
+                                    <div class="icon bg-green text-white"><i></i></div>
+                                </div>
                                 <div class="bg-white shadow roundy px-4 py-3 d-flex align-items-center justify-content-between mb-4">
                                     <div class="flex-grow-1 d-flex align-items-center">
                                         <div class="dot mr-3 bg-red"></div>
@@ -144,8 +159,24 @@
                                 <h4>家教要求：</h4>
                                 ${order.content}
                             </div>
+                            <c:if test="${type == 'teacher' && order.teacher.id == user.id && order.status != 0}">
+                                <div class="py-5">
+                                    <h4>详细信息：</h4>
+                                    <c:if test="${order.status == 1}">
+                                    <strong>联系人电话：</strong>${order.student.phone}
+                                    </c:if>
+                                    <c:if test="${order.status == 2}">
+                                        <strong>联系人电话：</strong>${order.student.phone}
+                                        <br/><strong>家教详细地址：</strong>${order.student.address}
+                                    </c:if>
+                                </div>
+                            </c:if>
                             <c:if test="${not empty order.teacher}">
-                                <a href="#" class="message card px-5 py-3 mb-4 bg-hover-gradient-primary no-anchor-style">
+                                <a  href="#"
+                                    <c:if test="${user.id==order.student.id && type=='user'}">
+                                        data-toggle="modal" data-target="#myModal"
+                                    </c:if>
+                                   class="message card px-5 py-3 mb-4 bg-hover-gradient-primary no-anchor-style">
                                     <div class="row">
                                         <div class="col-lg-3 d-flex align-items-center flex-column flex-lg-row text-center text-md-left"><strong class="h5 mb-0"><fmt:formatDate value="${order.finTime}" pattern="yyyy-MM-dd"></fmt:formatDate></strong><img src="/static/img/avatar-1.jpg" alt="..." style="max-width: 3rem" class="rounded-circle mx-3 my-2 my-lg-0">
                                             <h6 class="mb-0">${order.teacher.name}</h6>
@@ -157,10 +188,196 @@
                                             <div class="bg-blue roundy px-4 py-1 mr-0 mr-lg-3 mt-2 mt-lg-0 text-white exclode">已接取</div>
                                         </div>
                                     </div></a>
+                                <div class="modal fade" id="myModal">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+
+                                            <!-- 模态框头部 -->
+                                            <div class="modal-header">
+                                                <h4 class="modal-title">教师信息</h4>
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            </div>
+
+                                            <!-- 模态框主体 -->
+                                            <div class="modal-body">
+                                                姓名:${order.teacher.name}<br/>
+                                                性别:${order.teacher.sex}<br/>
+                                                职业:${order.teacher.role}<br/>
+                                                毕业学校:${order.teacher.school}<br/>
+                                                联系电话:${order.teacher.phone}<br/>
+                                                描述:${order.teacher.description}<br/>
+                                            </div>
+
+                                            <!-- 模态框底部 -->
+                                            <div class="modal-footer">
+
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
                             </c:if>
-                            <c:if test="${order.student.id == user.id && order.status == 0}">
+                            <c:if test="${order.student.id == user.id && order.status == 0 && type == 'user'}">
                                 <center>
-                                    <a href="#" class="btn btn-primary">取消发布</a>
+                                    <a href="#" data-toggle="modal" data-target="#myModal" class="btn btn-primary">取消发布</a>
+                                </center>
+                                <div class="modal fade" id="myModal">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+
+                                            <!-- 模态框头部 -->
+                                            <div class="modal-header">
+                                                <h4 class="modal-title">确认信息</h4>
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            </div>
+
+                                            <!-- 模态框主体 -->
+                                            <div class="modal-body">
+                                                确定要取消吗？
+                                            </div>
+
+                                            <!-- 模态框底部 -->
+                                            <div class="modal-footer">
+                                                <a href="/user/unPub?id=${order.id}" class="btn btn-primary" >确认</a>
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </c:if>
+
+                            <c:if test="${order.student.id == user.id && order.status == 1 && type == 'user'}">
+                                <center>
+                                    <a href="/user/confirmOrders?id=${order.id}" data-toggle="modal" data-target="#myModal1" class="btn btn-primary">同意家教</a>&nbsp;<a href="/user/rejuctOrders?id=${order.id}" data-toggle="modal" data-target="#myModal2" class="btn btn-danger">换个家教</a>
+                                </center>
+                                <div class="modal fade" id="myModal1">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+
+                                            <!-- 模态框头部 -->
+                                            <div class="modal-header">
+                                                <h4 class="modal-title">确认信息</h4>
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            </div>
+
+                                            <!-- 模态框主体 -->
+                                            <div class="modal-body">
+                                                要同意吗？
+                                            </div>
+
+                                            <!-- 模态框底部 -->
+                                            <div class="modal-footer">
+                                                <a href="/user/confirmOrders?id=${order.id}" class="btn btn-primary">同意</a>
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="modal fade" id="myModal2">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+
+                                            <!-- 模态框头部 -->
+                                            <div class="modal-header">
+                                                <h4 class="modal-title">确认信息</h4>
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            </div>
+
+                                            <!-- 模态框主体 -->
+                                            <div class="modal-body">
+                                                要拒绝吗？
+                                            </div>
+
+                                            <!-- 模态框底部 -->
+                                            <div class="modal-footer">
+                                                <a href="/user/rejuctOrders?id=${order.id}" class="btn btn-primary">确认</a>
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </c:if>
+
+                            <c:if test="${type == 'teacher' && order.status == 0}">
+                                <c:if test="${user.status == 0}">
+                                    <center>
+                                        <a href="#" class="btn btn-primary" disabled>请先缴纳押金</a>
+                                    </center>
+                                </c:if>
+                                <c:if test="${user.status == 1}">
+
+                                <center>
+                                    <a href="#" data-toggle="modal" data-target="#myModal" class="btn btn-primary">接了这单</a>
+                                </center>
+                                <!-- 模态框 -->
+                                <div class="modal fade" id="myModal">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+
+                                            <!-- 模态框头部 -->
+                                            <div class="modal-header">
+                                                <h4 class="modal-title">确认信息</h4>
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            </div>
+
+                                            <!-- 模态框主体 -->
+                                            <div class="modal-body">
+                                                家教地区：${order.area}<br/>
+                                                单次薪资：￥${order.price}<br/>
+                                                每周次数：${order.weekNum}次<br/>
+                                                手续费：￥${order.price * order.weekNum * 0.7}<br/>
+                                            </div>
+
+                                            <!-- 模态框底部 -->
+                                            <div class="modal-footer">
+                                                <a href="/teacher/postOrders?id=${order.id}" class="btn btn-primary" >确认</a>
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                </c:if>
+                            </c:if>
+
+                            <c:if test="${type == 'teacher' && order.teacher.id == user.id && order.status == 1}">
+                                <center>
+                                    <a href="#"  data-toggle="modal" data-target="#myModal1"  class="btn btn-primary">取消订单</a>
+                                </center>
+                                <div class="modal fade" id="myModal1">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+
+                                            <!-- 模态框头部 -->
+                                            <div class="modal-header">
+                                                <h4 class="modal-title">确认信息</h4>
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            </div>
+
+                                            <!-- 模态框主体 -->
+                                            <div class="modal-body">
+                                                确定要取消吗？
+                                            </div>
+
+                                            <!-- 模态框底部 -->
+                                            <div class="modal-footer">
+                                                <a href="/teacher/unPost?id=${order.id}" class="btn btn-primary" >确认</a>
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </c:if>
+
+                            <c:if test="${type == 'teacher' && order.teacher.id == user.id  && order.status == 2}">
+                                <center>
+                                    <a href="#" class="btn btn-primary">评价订单</a>
                                 </center>
                             </c:if>
 

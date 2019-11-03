@@ -20,6 +20,10 @@ public class TeacherServiceImpl implements TeacherService {
         return teacherMapper.queryTeacherById(id);
     }
 
+    public Teacher queryTeacherByUsername(String username) {
+        return teacherMapper.queryTeacherByUsername(username);
+    }
+
     public int addTeacher(Teacher teacher) {
         return teacherMapper.addTeacher(teacher);
     }
@@ -32,8 +36,11 @@ public class TeacherServiceImpl implements TeacherService {
         return teacherMapper.deleteTeacher(id);
     }
 
-    public Teacher Login(String username, String password) {
+    public Teacher login(String username, String password) {
         Teacher teacher = teacherMapper.queryTeacherByUsername(username);
+        if (teacher == null){
+            return null;
+        }
         if (!teacher.getPassword().equals(password)) {
             return null;
         }

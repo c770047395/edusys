@@ -80,7 +80,7 @@
             <li class="nav-item dropdown ml-auto"><a id="userInfo" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"><img src="/static/img/avatar-6.jpg" alt="Jason Doe" style="max-width: 2.5rem;" class="img-fluid rounded-circle shadow"></a>
                 <div aria-labelledby="userInfo" class="dropdown-menu"><a href="#" class="dropdown-item"><strong class="d-block text-uppercase headings-font-family">${user.username}</strong><small>${user.name}</small></a>
                     <div class="dropdown-divider"></div><a href="#" class="dropdown-item">设置</a><a href="#" class="dropdown-item">日志       </a>
-                    <div class="dropdown-divider"></div><a href="/user/logout" class="dropdown-item">退出登录</a>
+                    <div class="dropdown-divider"></div><a href="/${type}/logout" class="dropdown-item">退出登录</a>
                 </div>
             </li>
         </ul>
@@ -90,18 +90,18 @@
     <div id="sidebar" class="sidebar py-3">
         <div class="text-gray-400 text-uppercase px-3 px-lg-4 py-4 font-weight-bold small headings-font-family">主菜单</div>
         <ul class="sidebar-menu list-unstyled">
-            <li class="sidebar-list-item"><a href="/user/toMain" class="sidebar-link text-muted"><i class="o-home-1 mr-3 text-gray"></i><span>首页</span></a></li>
-            <li class="sidebar-list-item"><a href="/user/toOrderManager" class="sidebar-link text-muted" ><i class="o-survey-1 mr-3 text-gray"></i><span>家教中心</span></a></li>
+            <li class="sidebar-list-item"><a href="/${type}/toMain" class="sidebar-link text-muted"><i class="o-home-1 mr-3 text-gray"></i><span>首页</span></a></li>
+            <li class="sidebar-list-item"><a href="/${type}/toOrderManager" class="sidebar-link text-muted" ><i class="o-survey-1 mr-3 text-gray"></i><span>家教中心</span></a></li>
             <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages" aria-expanded="true" aria-controls="pages" class="sidebar-link text-muted"><i class="o-user-1 mr-3 text-gray"></i><span>用户</span></a>
                 <div id="pages" class="collapse show">
                     <ul class="sidebar-menu list-unstyled border-left border-primary border-thick">
-                        <li class="sidebar-list-item"><a href="/user/toSetting" class="sidebar-link text-muted pl-lg-5 active">修改资料</a></li>
-                        <li class="sidebar-list-item"><a href="/user/toPassword" class="sidebar-link text-muted pl-lg-5">修改密码</a></li>
-                        <li class="sidebar-list-item"><a href="/user/toDeposit" class="sidebar-link text-muted pl-lg-5">押金管理</a></li>
+                        <li class="sidebar-list-item"><a href="/${type}/toSetting" class="sidebar-link text-muted pl-lg-5 active">修改资料</a></li>
+                        <li class="sidebar-list-item"><a href="/${type}/toPassword" class="sidebar-link text-muted pl-lg-5 ">修改密码</a></li>
+                        <li class="sidebar-list-item"><a href="/${type}/toDeposit" class="sidebar-link text-muted pl-lg-5">押金管理</a></li>
                     </ul>
                 </div>
             </li>
-            <li class="sidebar-list-item"><a href="/user/logout" class="sidebar-link text-muted"><i class="o-exit-1 mr-3 text-gray"></i><span>退出登录</span></a></li>
+            <li class="sidebar-list-item"><a href="/${type}/logout" class="sidebar-link text-muted"><i class="o-exit-1 mr-3 text-gray"></i><span>退出登录</span></a></li>
         </ul>
     </div>
     <div class="page-holder w-100 d-flex flex-wrap">
@@ -116,14 +116,14 @@
                             <div class="card-body">
                                 <c:if test="${not empty msg}"><div class="alert-${msg_type} alert">${msg}</div></c:if>
                                 <p>请填写详细信息.</p>
-                                <form action="/user/updateUser" method="post">
+                                <form action="/${type}/updateUser" method="post">
                                     <div class="form-group">
-                                        <label class="form-control-label text-uppercase">姓名</label>
-                                        <input type="text" value="${user.name}" required name="name" class="form-control">
+                                        <label class="form-control-label text-uppercase" >姓名</label>
+                                        <input type="text" value="${user.name}" required name="name" class="form-control" <c:if test="${type == 'teacher'}">disabled</c:if>>
                                     </div>
                                     <div class="form-group">
-                                        <label class="form-control-label text-uppercase">性别</label>
-                                        <select class="form-control" required name="sex">
+                                        <label class="form-control-label text-uppercase" >性别</label>
+                                        <select class="form-control" required name="sex" <c:if test="${type == 'teacher'}">disabled</c:if>>
                                             <c:if test="${user.sex=='男'}">
                                                 <option value="男" selected>男</option>
                                                 <option value="女">女</option>
@@ -136,9 +136,10 @@
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <label class="form-control-label text-uppercase">身份证</label>
-                                        <input type="text" value="${user.idNumber}" required name="idNumber" class="form-control">
+                                        <label class="form-control-label text-uppercase" >身份证</label>
+                                        <input type="text" value="${user.idNumber}" required name="idNumber" class="form-control" <c:if test="${type == 'teacher'}">disabled</c:if>>
                                     </div>
+                                    <c:if test="${type == 'user'}">
                                     <div class="form-group">
                                         <label class="form-control-label text-uppercase">所在区域</label>
                                         <input type="text" value="${user.area}" required name="area" class="form-control">
@@ -147,10 +148,17 @@
                                         <label class="form-control-label text-uppercase">详细地址</label>
                                         <input type="text" value="${user.address}" required  name="address" class="form-control">
                                     </div>
+                                    </c:if>
                                     <div class="form-group">
                                         <label class="form-control-label text-uppercase">联系电话</label>
                                         <input type="text" value="${user.phone}"  required name="phone" class="form-control">
                                     </div>
+                                    <c:if test="${type == 'teacher'}">
+                                        <div class="form-group">
+                                            <label class="form-control-label text-uppercase">个人描述</label>
+                                            <input type="text" value="${user.description}"  required name="description" class="form-control">
+                                        </div>
+                                    </c:if>
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-primary">提交修改</button>
                                     </div>

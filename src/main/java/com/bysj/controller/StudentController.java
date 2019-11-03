@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpSession;
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -35,19 +36,23 @@ public class StudentController {
             return "redirect:/user/toMain";
         }
         model.addAttribute("title","家长/学生");
+        model.addAttribute("type","user");
         return "login";
     }
 
     @RequestMapping("/login")
-    public String login(HttpSession session, String username, String password, Model model){
+    public String login(HttpSession session, String username, String password, RedirectAttributes modelMap){
 
         Student student = studentService.login(username, password);
         if(student == null){
-            model.addAttribute("msg","用户名或密码错误");
-            model.addAttribute("msg_type","danger");
+            modelMap.addFlashAttribute("msg","用户名或密码错误");
+            modelMap.addFlashAttribute("msg_type","danger");
+            modelMap.addFlashAttribute("title","家长/学生");
+            modelMap.addFlashAttribute("type","user");
             return "login";
         }
         session.setAttribute("user",student);
+        session.setAttribute("type","user");
         return "redirect:/user/toMain";
     }
 
@@ -61,6 +66,7 @@ public class StudentController {
     @RequestMapping("/toRegister")
     public String toRegister(Model model){
         model.addAttribute("title","家长/学生");
+        model.addAttribute("type","user");
         return "register";
     }
     @RequestMapping("register")
@@ -118,7 +124,6 @@ public class StudentController {
     public String toDeposit(){
         return "changeDeposit";
     }
-
     @RequestMapping("/updateUser")
     public String updateUser(HttpSession session,Student student,RedirectAttributes modelMap){
         Student user =(Student) session.getAttribute("user");
@@ -195,6 +200,34 @@ public class StudentController {
     @RequestMapping("/orderDetail")
     public String orderDetail(int id,Model model){
         Orders orders = ordersService.queryOrdersById(id);
+        model.addAttribute("order",orders);
+        return "orderDetail";
+    }
+
+    @RequestMapping("/confirmOrders")
+    public String confirmOrders(int id,Model model){
+        Orders orders = ordersService.queryOrdersById(id);
+        orders.setStatus(2);
+        orders.setFinTime(new Date());
+        ordersService.updateOrders(orders);
+        model.addAttribute("order",orders);
+        return "orderDetail";
+    }
+    @RequestMapping("/rejuctOrders")
+    public String rejuctOrders(int id,Model model){
+        Orders orders = ordersService.queryOrdersById(id);
+        orders.setStatus(0);
+        orders.setTeacher(null);
+        ordersService.updateOrders(orders);
+        model.addAttribute("order",orders);
+        return "orderDetail";
+    }
+    @RequestMapping("/unPub")
+    public String unPub(int id,Model model){
+        Orders orders = ordersService.queryOrdersById(id);
+        orders.setStatus(-1);
+        orders.setTeacher(null);
+        ordersService.updateOrders(orders);
         model.addAttribute("order",orders);
         return "orderDetail";
     }
