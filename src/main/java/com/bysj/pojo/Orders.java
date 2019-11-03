@@ -17,6 +17,8 @@ public class Orders {
     private int postNum;
     private String sub;
     private String level;
+    private String area;
+    private String address;
     private String content;
     private float price;
     private int weekNum;

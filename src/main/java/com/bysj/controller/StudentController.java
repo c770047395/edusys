@@ -162,5 +162,41 @@ public class StudentController {
         return "orderManager";
     }
 
+    @RequestMapping("/toPubInfo")
+    public String toPubInfo(){
+        return "pubOrder";
+    }
+
+    @RequestMapping("/toQueryMe")
+    public String toQueryMe(HttpSession session,Model model){
+        Student user = (Student) session.getAttribute("user");
+        List<Orders> ordersList = ordersService.queryOrdersByUserId(user.getId());
+        model.addAttribute("list",ordersList);
+        return "myOrders";
+    }
+
+    @RequestMapping("/toQueryAll")
+    public String toQueryAll(Model model){
+        List<Orders> ordersList = ordersService.queryAllOrders();
+        model.addAttribute("list",ordersList);
+        return "myOrders";
+    }
+
+    @RequestMapping("/pubInfo")
+    public String pubInfo(HttpSession session,Orders orders,RedirectAttributes modelMap){
+        Student user = (Student)session.getAttribute("user");
+        orders.setStudent(user);
+        ordersService.addOrders(orders);
+        modelMap.addFlashAttribute("msg","发布成功");
+        modelMap.addFlashAttribute("msg_type","success");
+        return "redirect:/user/toQueryMe";
+    }
+
+    @RequestMapping("/orderDetail")
+    public String orderDetail(int id,Model model){
+        Orders orders = ordersService.queryOrdersById(id);
+        model.addAttribute("order",orders);
+        return "orderDetail";
+    }
 
 }

@@ -91,12 +91,12 @@
         <div class="text-gray-400 text-uppercase px-3 px-lg-4 py-4 font-weight-bold small headings-font-family">主菜单</div>
         <ul class="sidebar-menu list-unstyled">
             <li class="sidebar-list-item"><a href="/user/toMain" class="sidebar-link text-muted"><i class="o-home-1 mr-3 text-gray"></i><span>首页</span></a></li>
-            <li class="sidebar-list-item"><a href="/user/toOrderManager" class="sidebar-link text-muted" ><i class="o-survey-1 mr-3 text-gray"></i><span>家教中心</span></a></li>
-            <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages" aria-expanded="true" aria-controls="pages" class="sidebar-link text-muted"><i class="o-user-1 mr-3 text-gray"></i><span>用户</span></a>
-                <div id="pages" class="collapse show">
+            <li class="sidebar-list-item"><a href="/user/toOrderManager" class="sidebar-link text-muted active" ><i class="o-survey-1 mr-3 text-gray"></i><span>家教中心</span></a></li>
+            <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-user-1 mr-3 text-gray"></i><span>用户</span></a>
+                <div id="pages" class="collapse">
                     <ul class="sidebar-menu list-unstyled border-left border-primary border-thick">
                         <li class="sidebar-list-item"><a href="/user/toSetting" class="sidebar-link text-muted pl-lg-5">修改资料</a></li>
-                        <li class="sidebar-list-item"><a href="/user/toPassword" class="sidebar-link text-muted pl-lg-5 active">修改密码</a></li>
+                        <li class="sidebar-list-item"><a href="/user/toPassword" class="sidebar-link text-muted pl-lg-5">修改密码</a></li>
                         <li class="sidebar-list-item"><a href="/user/toDeposit" class="sidebar-link text-muted pl-lg-5">押金管理</a></li>
                     </ul>
                 </div>
@@ -108,27 +108,45 @@
         <div class="container-fluid px-xl-5">
             <section class="py-5">
                 <div class="row">
-                    <div class="col-lg-12 mb-5">
+                    <div class="col-lg-12 mb-4">
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="h6 text-uppercase mb-0">修改密码</h3>
+                                <h6 class="text-uppercase mb-0">信息列表</h6>
                             </div>
                             <div class="card-body">
-                                <c:if test="${not empty msg}"><div class="alert-${msg_type} alert">${msg}</div></c:if>
-                                <form action="/user/changePassword" method="post">
-                                    <div class="form-group">
-                                        <label class="form-control-label text-uppercase">原密码</label>
-                                        <input type="password" placeholder="请输入原密码" required name="oldPassword" class="form-control">
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="form-control-label text-uppercase">新密码</label>
-                                        <input type="password" placeholder="请输入新密码" required name="newPassword" class="form-control">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <button type="submit" class="btn btn-primary">提交修改</button>
-                                    </div>
-                                </form>
+                                <table class="table card-text">
+                                    <thead>
+                                    <tr>
+                                        <th>序号</th>
+                                        <th>发布时间</th>
+                                        <th>科目</th>
+                                        <th>年级</th>
+                                        <th>地区</th>
+                                        <th>状态</th>
+                                        <th>操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <c:forEach items="${list}" var="item" varStatus="status">
+                                        <tr>
+                                            <td>${status.index+1}</td>
+                                            <td><fmt:formatDate value="${item.pubTime}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
+                                            <td>${item.sub}</td>
+                                            <td>${item.level}</td>
+                                            <td>${item.area}</td>
+                                            <td>
+                                                <c:if test="${item.status == 0 }">
+                                                    <div class="badge badge-secondary">未找到</div>
+                                                </c:if>
+                                                <c:if test="${item.status != 0 }">
+                                                    <div class="badge badge-success">已找到</div>
+                                                </c:if>
+                                            </td>
+                                            <td><a class="btn btn-primary" href="/user/orderDetail?id=${item.id}">查看详情</a></td>
+                                        </tr>
+                                    </c:forEach>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>

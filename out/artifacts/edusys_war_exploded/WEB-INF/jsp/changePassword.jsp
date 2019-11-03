@@ -118,11 +118,11 @@
                                 <form action="/user/changePassword" method="post">
                                     <div class="form-group">
                                         <label class="form-control-label text-uppercase">原密码</label>
-                                        <input type="password" placeholder="请输入原密码" name="oldPassword" class="form-control">
+                                        <input type="password" placeholder="请输入原密码" required name="oldPassword" class="form-control">
                                     </div>
                                     <div class="form-group">
                                         <label class="form-control-label text-uppercase">新密码</label>
-                                        <input type="password" placeholder="请输入新密码" name="newPassword" class="form-control">
+                                        <input type="password" placeholder="请输入新密码" required name="newPassword" class="form-control">
                                     </div>
 
                                     <div class="form-group">

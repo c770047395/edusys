@@ -122,7 +122,7 @@
                         </a>
                     </div>
                     <div class="col-lg-4 mb-4 mb-lg-0">
-                        <a href="/user/toQueryMeg" class="card rounded credit-card bg-hover-gradient-blue">
+                        <a href="/user/toQueryMe" class="card rounded credit-card bg-hover-gradient-blue">
                             <div class="content d-flex flex-column justify-content-between p-4">
                                 <h1 class="mb-5"><i class="fa fa-tasks "></i>&nbsp;我的家教</h1>
                                 <div class="d-flex justify-content-between align-items-end pt-3">

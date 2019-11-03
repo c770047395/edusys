@@ -119,11 +119,11 @@
                                 <form action="/user/updateUser" method="post">
                                     <div class="form-group">
                                         <label class="form-control-label text-uppercase">姓名</label>
-                                        <input type="text" value="${user.name}" name="name" class="form-control">
+                                        <input type="text" value="${user.name}" required name="name" class="form-control">
                                     </div>
                                     <div class="form-group">
                                         <label class="form-control-label text-uppercase">性别</label>
-                                        <select class="form-control" name="sex">
+                                        <select class="form-control" required name="sex">
                                             <c:if test="${user.sex=='男'}">
                                                 <option value="男" selected>男</option>
                                                 <option value="女">女</option>
@@ -137,19 +137,19 @@
                                     </div>
                                     <div class="form-group">
                                         <label class="form-control-label text-uppercase">身份证</label>
-                                        <input type="text" value="${user.idNumber}" name="idNumber" class="form-control">
+                                        <input type="text" value="${user.idNumber}" required name="idNumber" class="form-control">
                                     </div>
                                     <div class="form-group">
                                         <label class="form-control-label text-uppercase">所在区域</label>
-                                        <input type="text" value="${user.area}"  name="area" class="form-control">
+                                        <input type="text" value="${user.area}" required name="area" class="form-control">
                                     </div>
                                     <div class="form-group">
                                         <label class="form-control-label text-uppercase">详细地址</label>
-                                        <input type="text" value="${user.address}"  name="address" class="form-control">
+                                        <input type="text" value="${user.address}" required  name="address" class="form-control">
                                     </div>
                                     <div class="form-group">
                                         <label class="form-control-label text-uppercase">联系电话</label>
-                                        <input type="text" value="${user.phone}"  name="phone" class="form-control">
+                                        <input type="text" value="${user.phone}"  required name="phone" class="form-control">
                                     </div>
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-primary">提交修改</button>

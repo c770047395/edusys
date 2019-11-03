@@ -15,23 +15,23 @@
         <association property="teacher" column="teacher_id" javaType="Teacher" select="getTeacher"/>
     </resultMap>
     <select id="queryAllOrders" resultMap="order">
-        select * from orders
+        select * from orders order by pub_time desc
     </select>
     <select id="queryOrdersById" resultMap="order">
         select * from orders where id = #{id}
     </select>
     <select id="queryOrdersByUserId" resultMap="order">
-        select * from orders where user_id = #{userId}
+        select * from orders where user_id = #{userId} order by pub_time desc
     </select>
     <select id="queryOrdersByTeacherId" resultMap="order">
-        select * from orders where teacher_id = #{teacherId}
+        select * from orders where teacher_id = #{teacherId} order by pub_time desc
     </select>
     <insert id="addOrders" parameterType="Orders">
-        insert into orders(pub_time,fin_time,check_num,post_num,sub,level,content,price,week_num,status,user_id,teacher_id)
-        values(#{pubTime},#{finTime},#{checkNum},#{postNum},#{sub},#{level},#{content},#{price},#{weekNum},#{status},#{student.id},#{teacher.id})
+        insert into orders(pub_time,fin_time,check_num,post_num,sub,level,area,address,content,price,week_num,status,user_id,teacher_id)
+        values(#{pubTime},#{finTime},#{checkNum},#{postNum},#{sub},#{level},#{area},#{address},#{content},#{price},#{weekNum},#{status},#{student.id},#{teacher.id})
     </insert>
     <update id="updateOrders" parameterType="Orders">
-        update orders set pub_time=#{pubTime},fin_time=#{finTime},check_num=#{checkNum},post_num=#{postNum},sub=#{sub},level=#{level},content=#{content},price=#{price},week_num#{weekNum},status=#{status},user_id=#{student.id},teacher_id=#{teacher.id} where id = #{id}
+        update orders set pub_time=#{pubTime},fin_time=#{finTime},check_num=#{checkNum},post_num=#{postNum},sub=#{sub},level=#{level},arrea=#{area},address=#{address},content=#{content},price=#{price},week_num#{weekNum},status=#{status},user_id=#{student.id},teacher_id=#{teacher.id} where id = #{id}
     </update>
     <delete id="deleteOrders" >
         delete from orders where id = #{id}

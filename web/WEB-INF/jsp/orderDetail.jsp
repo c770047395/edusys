@@ -91,12 +91,12 @@
         <div class="text-gray-400 text-uppercase px-3 px-lg-4 py-4 font-weight-bold small headings-font-family">主菜单</div>
         <ul class="sidebar-menu list-unstyled">
             <li class="sidebar-list-item"><a href="/user/toMain" class="sidebar-link text-muted"><i class="o-home-1 mr-3 text-gray"></i><span>首页</span></a></li>
-            <li class="sidebar-list-item"><a href="/user/toOrderManager" class="sidebar-link text-muted" ><i class="o-survey-1 mr-3 text-gray"></i><span>家教中心</span></a></li>
-            <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages" aria-expanded="true" aria-controls="pages" class="sidebar-link text-muted"><i class="o-user-1 mr-3 text-gray"></i><span>用户</span></a>
-                <div id="pages" class="collapse show">
+            <li class="sidebar-list-item"><a href="/user/toOrderManager" class="sidebar-link text-muted active" ><i class="o-survey-1 mr-3 text-gray"></i><span>家教中心</span></a></li>
+            <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-user-1 mr-3 text-gray"></i><span>用户</span></a>
+                <div id="pages" class="collapse">
                     <ul class="sidebar-menu list-unstyled border-left border-primary border-thick">
                         <li class="sidebar-list-item"><a href="/user/toSetting" class="sidebar-link text-muted pl-lg-5">修改资料</a></li>
-                        <li class="sidebar-list-item"><a href="/user/toPassword" class="sidebar-link text-muted pl-lg-5 active">修改密码</a></li>
+                        <li class="sidebar-list-item"><a href="/user/toPassword" class="sidebar-link text-muted pl-lg-5">修改密码</a></li>
                         <li class="sidebar-list-item"><a href="/user/toDeposit" class="sidebar-link text-muted pl-lg-5">押金管理</a></li>
                     </ul>
                 </div>
@@ -108,28 +108,62 @@
         <div class="container-fluid px-xl-5">
             <section class="py-5">
                 <div class="row">
-                    <div class="col-lg-12 mb-5">
-                        <div class="card">
-                            <div class="card-header">
-                                <h3 class="h6 text-uppercase mb-0">修改密码</h3>
-                            </div>
-                            <div class="card-body">
-                                <c:if test="${not empty msg}"><div class="alert-${msg_type} alert">${msg}</div></c:if>
-                                <form action="/user/changePassword" method="post">
-                                    <div class="form-group">
-                                        <label class="form-control-label text-uppercase">原密码</label>
-                                        <input type="password" placeholder="请输入原密码" required name="oldPassword" class="form-control">
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="form-control-label text-uppercase">新密码</label>
-                                        <input type="password" placeholder="请输入新密码" required name="newPassword" class="form-control">
-                                    </div>
+                    <div class="col-lg-12">
+                        <div class="card px-5 py-4">
+                            <h2 class="mb-0 d-flex align-items-center" ><span>${order.sub}-${order.level}</span>
+                                <c:if test="${order.status == 0}">
+                                    <div class="badge badge-secondary" style="margin-left: 20px;">未找到</div>
+                                </c:if>
+                                <c:if test="${order.status == 1}">
+                                    <div class="badge badge-success" style="margin-left: 20px;">已找到</div>
+                                </c:if>
 
-                                    <div class="form-group">
-                                        <button type="submit" class="btn btn-primary">提交修改</button>
+                            </h2>
+                            <span class="text-muted">发布于：<fmt:formatDate value="${order.pubTime}" pattern="yyyy-MM-dd HH:mm:ss"></fmt:formatDate></span>
+                            <div class="py-4">
+                                <div class="bg-white shadow roundy px-4 py-3 d-flex align-items-center justify-content-between mb-4">
+                                    <div class="flex-grow-1 d-flex align-items-center">
+                                        <div class="dot mr-3 bg-red"></div>
+                                        <div class="text">
+                                            <h6 class="mb-0">单次薪资</h6><span class="text-red">￥${order.price}</span>
+                                        </div>
                                     </div>
-                                </form>
+                                    <div class="icon bg-red text-white"><i></i></div>
+                                </div>
+                                <div class="bg-white shadow roundy px-4 py-3 d-flex align-items-center justify-content-between mb-4">
+                                    <div class="flex-grow-1 d-flex align-items-center">
+                                        <div class="dot mr-3 bg-blue"></div>
+                                        <div class="text">
+                                            <h6 class="mb-0">每周次数</h6><span class="text-blue">${order.weekNum}次</span>
+                                        </div>
+                                    </div>
+                                    <div class="icon bg-blue text-white"><i></i></div>
+                                </div>
                             </div>
+                            <div class="py-5">
+                                <h4>家教要求：</h4>
+                                ${order.content}
+                            </div>
+                            <c:if test="${not empty order.teacher}">
+                                <a href="#" class="message card px-5 py-3 mb-4 bg-hover-gradient-primary no-anchor-style">
+                                    <div class="row">
+                                        <div class="col-lg-3 d-flex align-items-center flex-column flex-lg-row text-center text-md-left"><strong class="h5 mb-0"><fmt:formatDate value="${order.finTime}" pattern="yyyy-MM-dd"></fmt:formatDate></strong><img src="/static/img/avatar-1.jpg" alt="..." style="max-width: 3rem" class="rounded-circle mx-3 my-2 my-lg-0">
+                                            <h6 class="mb-0">${order.teacher.name}</h6>
+                                        </div>
+                                        <div class="col-lg-7">
+
+                                        </div>
+                                        <div class="col-lg-2 d-flex align-items-center flex-column flex-lg-row text-center text-md-left">
+                                            <div class="bg-blue roundy px-4 py-1 mr-0 mr-lg-3 mt-2 mt-lg-0 text-white exclode">已接取</div>
+                                        </div>
+                                    </div></a>
+                            </c:if>
+                            <c:if test="${order.student.id == user.id && order.status == 0}">
+                                <center>
+                                    <a href="#" class="btn btn-primary">取消发布</a>
+                                </center>
+                            </c:if>
+
                         </div>
                     </div>
                 </div>

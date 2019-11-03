@@ -91,12 +91,12 @@
         <div class="text-gray-400 text-uppercase px-3 px-lg-4 py-4 font-weight-bold small headings-font-family">主菜单</div>
         <ul class="sidebar-menu list-unstyled">
             <li class="sidebar-list-item"><a href="/user/toMain" class="sidebar-link text-muted"><i class="o-home-1 mr-3 text-gray"></i><span>首页</span></a></li>
-            <li class="sidebar-list-item"><a href="/user/toOrderManager" class="sidebar-link text-muted" ><i class="o-survey-1 mr-3 text-gray"></i><span>家教中心</span></a></li>
-            <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages" aria-expanded="true" aria-controls="pages" class="sidebar-link text-muted"><i class="o-user-1 mr-3 text-gray"></i><span>用户</span></a>
-                <div id="pages" class="collapse show">
+            <li class="sidebar-list-item"><a href="/user/toOrderManager" class="sidebar-link text-muted active" ><i class="o-survey-1 mr-3 text-gray"></i><span>家教中心</span></a></li>
+            <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-user-1 mr-3 text-gray"></i><span>用户</span></a>
+                <div id="pages" class="collapse">
                     <ul class="sidebar-menu list-unstyled border-left border-primary border-thick">
                         <li class="sidebar-list-item"><a href="/user/toSetting" class="sidebar-link text-muted pl-lg-5">修改资料</a></li>
-                        <li class="sidebar-list-item"><a href="/user/toPassword" class="sidebar-link text-muted pl-lg-5 active">修改密码</a></li>
+                        <li class="sidebar-list-item"><a href="/user/toPassword" class="sidebar-link text-muted pl-lg-5">修改密码</a></li>
                         <li class="sidebar-list-item"><a href="/user/toDeposit" class="sidebar-link text-muted pl-lg-5">押金管理</a></li>
                     </ul>
                 </div>
@@ -107,30 +107,45 @@
     <div class="page-holder w-100 d-flex flex-wrap">
         <div class="container-fluid px-xl-5">
             <section class="py-5">
-                <div class="row">
-                    <div class="col-lg-12 mb-5">
-                        <div class="card">
-                            <div class="card-header">
-                                <h3 class="h6 text-uppercase mb-0">修改密码</h3>
-                            </div>
-                            <div class="card-body">
-                                <c:if test="${not empty msg}"><div class="alert-${msg_type} alert">${msg}</div></c:if>
-                                <form action="/user/changePassword" method="post">
-                                    <div class="form-group">
-                                        <label class="form-control-label text-uppercase">原密码</label>
-                                        <input type="password" placeholder="请输入原密码" required name="oldPassword" class="form-control">
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="form-control-label text-uppercase">新密码</label>
-                                        <input type="password" placeholder="请输入新密码" required name="newPassword" class="form-control">
+                <div class="row text-dark">
+                    <div class="col-lg-4 mb-4 mb-lg-0">
+                        <a href="/user/toPubInfo" class="card rounded credit-card bg-hover-gradient-violet">
+                            <div class="content d-flex flex-column justify-content-between p-4">
+                                <h1 class="mb-5"><i class="fa fa-search "></i>&nbsp;寻找家教</h1>
+                                <div class="d-flex justify-content-between align-items-end pt-3">
+                                    <div class="text-uppercase">
+                                        <div class="font-weight-bold d-block">发布信息</div><small class="text-gray"></small>
                                     </div>
 
-                                    <div class="form-group">
-                                        <button type="submit" class="btn btn-primary">提交修改</button>
-                                    </div>
-                                </form>
+                                </div>
                             </div>
-                        </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 mb-4 mb-lg-0">
+                        <a href="/user/toQueryMeg" class="card rounded credit-card bg-hover-gradient-blue">
+                            <div class="content d-flex flex-column justify-content-between p-4">
+                                <h1 class="mb-5"><i class="fa fa-tasks "></i>&nbsp;我的家教</h1>
+                                <div class="d-flex justify-content-between align-items-end pt-3">
+                                    <div class="text-uppercase">
+                                        <div class="font-weight-bold d-block">历史订单</div><small class="text-gray"></small>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 mb-4 mb-lg-0">
+                        <a href="/user/toQueryAll" class="card rounded credit-card bg-hover-gradient-green">
+                            <div class="content d-flex flex-column justify-content-between p-4">
+                                <h1 class="mb-5"><i class="fa fa-th"></i>&nbsp;探索</h1>
+                                <div class="d-flex justify-content-between align-items-end pt-3">
+                                    <div class="text-uppercase">
+                                        <div class="font-weight-bold d-block">查看全部信息</div><small class="text-gray"></small>
+                                    </div>
+                                    <h4 class="mb-0">${ordersNum}</h4>
+                                </div>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </section>

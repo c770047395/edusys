@@ -109,7 +109,7 @@
             <section class="py-5">
                 <div class="row text-dark">
                     <div class="col-lg-4 mb-4 mb-lg-0">
-                        <a href="#" class="card rounded credit-card bg-hover-gradient-violet">
+                        <a href="/user/toPubInfo" class="card rounded credit-card bg-hover-gradient-violet">
                             <div class="content d-flex flex-column justify-content-between p-4">
                                 <h1 class="mb-5"><i class="fa fa-search "></i>&nbsp;寻找家教</h1>
                                 <div class="d-flex justify-content-between align-items-end pt-3">
@@ -122,7 +122,7 @@
                         </a>
                     </div>
                     <div class="col-lg-4 mb-4 mb-lg-0">
-                        <a href="#" class="card rounded credit-card bg-hover-gradient-blue">
+                        <a href="/user/toQueryMe" class="card rounded credit-card bg-hover-gradient-blue">
                             <div class="content d-flex flex-column justify-content-between p-4">
                                 <h1 class="mb-5"><i class="fa fa-tasks "></i>&nbsp;我的家教</h1>
                                 <div class="d-flex justify-content-between align-items-end pt-3">
@@ -135,7 +135,7 @@
                         </a>
                     </div>
                     <div class="col-lg-4 mb-4 mb-lg-0">
-                        <a href="#" class="card rounded credit-card bg-hover-gradient-green">
+                        <a href="/user/toQueryAll" class="card rounded credit-card bg-hover-gradient-green">
                             <div class="content d-flex flex-column justify-content-between p-4">
                                 <h1 class="mb-5"><i class="fa fa-th"></i>&nbsp;探索</h1>
                                 <div class="d-flex justify-content-between align-items-end pt-3">
